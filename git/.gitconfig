@@ -1,0 +1,33 @@
+[user]
+  name =  Luni-4
+  email = luni-4@hotmail.it
+[github]
+  user = Luni-4
+[color]
+  diff = always
+[alias]
+  hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
+  github-repo = "!f() { \
+      git remote add origin https://github.com/Luni-4/"$1".git; \
+      git push -u origin master; \
+  }; f"
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = false
+  eol = lf
+  whitespace = tab-in-indent
+[branch]
+  autosetuprebase = always
+[merge]
+  conflictStyle = diff3
+[diff]
+  tool = kdiff3
+[push]
+  default = current
+  followTags = true
+[status]
+  showUntrackedFiles = all
+[color "diff"]
+  old = red
+  new = green
+  whitespace = blue reverse
