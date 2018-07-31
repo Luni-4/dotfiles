@@ -119,3 +119,15 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Create python virtual environment
+function create-venv() {
+  mkdir ~/$1
+  cd ~/$1
+  virtualenv --system-site-packages -p python3 venv
+}
+
+# Activate python virtual environment
+function active-venv(){
+  source ~/$1/venv/bin/activate
+}
