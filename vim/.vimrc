@@ -1,6 +1,8 @@
 set nocompatible                     "Choose no compatibility with vi"
 set showcmd                          "Display incomplete commands
+
 filetype plugin indent on            "Load file type plugins and indentation
+
 set enc=utf-8                        "Character encoding
 set fencs=utf-8,cp932                "Preferred character encoding
 
@@ -39,6 +41,9 @@ set wildignore+=*.stackdump
 set wildignore+=*~.*
 set wildignorecase
 
+"Automatically write software name and author
+map :scratch :0r ~/.vim/scratch.txt
+
 "Terminal's title, visual flash and audio beeps"
 set title
 set visualbell t_vb=
@@ -53,4 +58,7 @@ set formatoptions+=j
 
 "Error message"
 "match ErrorMsg '\%>100v.\+'          "Error if a line is greater than 100 characters
-match ErrorMsg '\s\+$'               "Error if there are trailing spaces
+match ErrorMsg '\s\+$'                "Error if there are trailing spaces
+
+"Remove trailing space in python"
+autocmd BufWritePre *.py %s/\s\+$//e
