@@ -56,8 +56,10 @@ nnoremap scratch :0r ~/.vim/scratch.txt
 nnoremap <C-l> :set nonumber!<CR>
 "Save files using Shift+S
 nmap <S-s> :w<CR>
-"Exit discarding changes
+"Discarding changes in exit with Shift+q
 nnoremap <S-q> :q!<CR>
+"Remap p command in normal mode
+nnoremap p "0p
 
 "Terminal's title, visual flash and audio beeps
 set title
