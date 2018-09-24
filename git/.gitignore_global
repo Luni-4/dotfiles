@@ -29,3 +29,13 @@
 # OS generated files #
 Icon?
 *.lock
+
+# Python #
+/__pycache__/
+*.py[cod]
+*$py.class
+
+/eggs/
+.eggs/
+*.egg-info/
+*.egg

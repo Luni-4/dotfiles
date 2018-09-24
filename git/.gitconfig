@@ -13,8 +13,12 @@
       git remote add origin https://github.com/Luni-4/"$1".git; \
       git push -u origin master; \
   }; f"
+  gitlab-repo = "!f() { \
+      git remote add origin https://gitlab.com/Luni-4/"$1".git; \
+      git push -u origin master; \
+  }; f"
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   autocrlf = false
   eol = lf
   whitespace = tab-in-indent
