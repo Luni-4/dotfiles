@@ -8,7 +8,7 @@
 [alias]
   hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
   amend = commit --amend
-  amend-no-message = commit --amend --all --no-edit
+  namend = commit --amend --all --no-edit
   github-repo = "!f() { \
       git remote add origin https://github.com/Luni-4/"$1".git; \
       git push -u origin master; \
