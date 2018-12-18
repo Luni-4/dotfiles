@@ -22,7 +22,7 @@ set nowrap
 set wrapscan
 
 "Tab handling
-set tabstop=2 shiftwidth=2           "Tab is two spaces
+set tabstop=4 shiftwidth=4           "Tab is two spaces
 set expandtab                        "Use spaces instead of tab in insert mode
 
 "Backspace through everything in insert mode
