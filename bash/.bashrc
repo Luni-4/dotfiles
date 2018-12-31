@@ -89,7 +89,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Python aliases and paths
-alias python=python3
+alias python=python3.7
 export PYTHONPATH=/usr/local/lib/python3.6/site-packages
 
 # Cuda paths
