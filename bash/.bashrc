@@ -93,7 +93,7 @@ alias python=python3.7
 export PYTHONPATH=/usr/local/lib/python3.6/site-packages
 
 # Cuda paths
-export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+export PATH=/usr/local/cuda-9.0/bin:/usr/local/lib${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # Pkg-config paths
