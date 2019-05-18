@@ -90,10 +90,10 @@ alias l='ls -CF'
 
 # Python aliases and paths
 alias python=python3.7
-export PYTHONPATH=/usr/local/lib/python3.6/site-packages
+export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 # Cuda paths
-export PATH=/usr/local/cuda-9.0/bin:/usr/local/lib${PATH:+:${PATH}}
+export PATH=/usr/local/cuda-9.0/bin:/usr/local/lib:~/Documenti/mxe/usr/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # Pkg-config paths
