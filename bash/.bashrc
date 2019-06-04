@@ -96,9 +96,8 @@ export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 export PATH=/usr/local/cuda-9.0/bin:/usr/local/lib:~/Documenti/mxe/usr/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-# Pkg-config paths
-export PKG_CONFIG_LIBDIR=/usr/local/lib/pkgconfig
-export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
+# Pkg-config path
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -136,3 +135,6 @@ function active-venv(){
 function 0x0(){
     curl -F'file=@'$1 https://0x0.st
 }
+
+# added by travis gem
+[ -f /home/mik/.travis/travis.sh ] && source /home/mik/.travis/travis.sh
