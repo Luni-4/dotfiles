@@ -99,6 +99,12 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:$
 # Pkg-config path
 export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 
+# Vulkan Lunar-G
+export VULKAN_SDK=~/vulkan/1.1.108.0/x86_64
+export PATH=$VULKAN_SDK/bin:$PATH
+export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
+export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
