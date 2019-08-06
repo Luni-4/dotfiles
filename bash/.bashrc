@@ -143,4 +143,4 @@ function 0x0(){
 }
 
 # added by travis gem
-[ -f /home/mik/.travis/travis.sh ] && source /home/mik/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
