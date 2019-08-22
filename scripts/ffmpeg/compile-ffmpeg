@@ -1,0 +1,25 @@
+#!/bin/sh
+set -ex
+./configure \
+    --disable-debug \
+    --disable-doc \
+    --disable-stripping \
+    --disable-libdrm \
+    --disable-cuda \
+    --enable-fontconfig \
+    --enable-gpl \
+    --enable-libass \
+    --enable-libfdk-aac \
+    --enable-libfreetype \
+    --enable-libmp3lame \
+    --enable-libopus \
+    --enable-libvorbis \
+    --enable-libaom \
+    --enable-libvpx \
+    --enable-libx264 \
+    --enable-libx265 \
+    --enable-shared \
+    --enable-version3 \
+    --enable-nonfree
+make -j4
+make install

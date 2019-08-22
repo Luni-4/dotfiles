@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -ex
+./waf uninstall
+export PKG_CONFIG_PATH=/usr/local/lib
+./waf configure \
+    --enable-libmpv-shared \
+    --disable-vdpau \
+    --disable-vulkan \
+    --disable-drm \
+    --disable-drmprime \
+    --disable-egl-drm \
+    --disable-vaapi-drm \
+    --enable-egl-x11 \
+    --enable-x11
+./waf -j4
+./waf install
