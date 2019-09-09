@@ -38,6 +38,10 @@
   old = red
   new = green
   whitespace = blue reverse
+[format]
+  subjectPrefix =
+  numbered = auto
+  signOff = true
 [sendemail]
   from = luni-4@hotmail.it
   smtpserver = smtp.live.com
