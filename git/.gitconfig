@@ -49,14 +49,12 @@
   new = green
   whitespace = blue reverse
 [format]
-  subjectPrefix =
   numbered = auto
-  signOff = true
 [sendemail]
-  from = luni-4@hotmail.it
   smtpserver = smtp.live.com
   smtpserverport = 25
   smtpuser = luni-4@hotmail.it
   smtpencryption = tls
   chainreplyto = false
+  suppresscc = all
   confirm = auto
