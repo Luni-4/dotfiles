@@ -24,6 +24,10 @@ alias la='ls -al'
 # Grep alias
 alias grep='grep --color=auto'
 
+# Tmux aliases
+alias dev='~/scripts/dev-tmux'
+alias job='~/scripts/dev-job job'
+
 # Python aliases and paths
 alias python=python3.7
 export PYTHONPATH=/usr/local/lib/python3.7/site-packages

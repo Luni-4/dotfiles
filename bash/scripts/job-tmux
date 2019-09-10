@@ -1,0 +1,12 @@
+#!/bin/sh
+
+while IFS=';' read -r name mail
+do
+    [ -d .git ] && git config --local user.name "$name"
+done <~/name_email.txt
+
+tmux new-session -d
+tmux split-window -h
+tmux split-window -v
+[ -z $1 ] || tmux rename-window $1
+tmux -2 attach-session -d
