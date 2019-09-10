@@ -10,13 +10,13 @@
   amend = commit --amend
   namend = commit --amend --all --no-edit
   spatch = "!f() { \
-      git rm -qrf --ignore-unmatch patches; \
-      git format-patch -o patches origin; \
+      rm -rf patches; \
+      git format-patch "$2" "$3" -o patches origin; \
       git send-email --to "$1" patches; \
   }; f"
   mpatch = "!f() { \
-      git rm -qrf --ignore-unmatch patches; \
-      git format-patch -n -o patches origin; \
+      rm -rf patches; \
+      git format-patch "$2" "$3" -n -o patches origin; \
       git send-email --compose --no-chain-reply-to --to "$1" patches; \
   }; f"
   github-repo = "!f() { \
