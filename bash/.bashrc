@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Start tmux when a new shell is launched
-#[[ -z "$TMUX" ]] && exec tmux
-
 # Do not put duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
 
