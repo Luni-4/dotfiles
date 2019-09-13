@@ -32,7 +32,7 @@ set backspace=indent,eol,start
 set nobackup                         "No backup
 set noswapfile                       "No swap
 
-"Buffers
+"Hide files, don't close them, if the current buffer has unsaved changes
 set hidden
 
 "Disable function folding
@@ -41,12 +41,10 @@ set nofoldenable
 "Enable line numbers
 set number
 
-"Ignore files in commands and plugins
-set wildignore+=.git
-set wildignore+=*.o,*.obj
-set wildignore+=*.pyc,*.pyo,__pycache__
-set wildignore+=*.stackdump
-set wildignore+=*~.*
+"Ignore these patterns during autocompletion
+set wildignore+=.git,*.o,*.obj,*.pyc,*.pyo,__pycache__,*.stackdump,*~.
+
+"Ignore case during autocompletion
 set wildignorecase
 
 "Automatically write software name and author
@@ -69,9 +67,6 @@ set noerrorbells
 "Keep selection after indenting source code lines
 vnoremap > >gv
 vnoremap < <gv
-
-"Join two separate comments into one line
-set formatoptions+=j
 
 "Error if there are trailing spaces
 match ErrorMsg '\s\+$'
