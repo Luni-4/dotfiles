@@ -31,7 +31,7 @@ alias grep='grep --color=auto'
 
 # Tmux aliases
 alias dev='~/scripts/dev-tmux'
-alias job='~/scripts/job-tmux job'
+alias job='~/scripts/job-tmux ~/vlc job'
 
 # Python aliases and paths
 alias python=python3.7

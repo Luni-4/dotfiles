@@ -1,8 +1,10 @@
 #!/bin/sh
 
+[ -z $1 ] || cd $1
+
 tmux new-session -d
 tmux split-window -h
 tmux split-window -v
-[ -z $1 ] || tmux rename-window $1
+[ -z $2 ] || tmux rename-window $2
 tmux select-pane -t 1
 tmux -2 attach-session -d
