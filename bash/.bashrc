@@ -18,6 +18,10 @@ HISTFILESIZE=2000
 eval "$(dircolors ~/.dircolors)"
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+# Set default editor
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Some more ls aliases
 alias ls='ls --color=auto'
 alias la='ls -al'
