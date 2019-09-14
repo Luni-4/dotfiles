@@ -22,19 +22,13 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export EDITOR=nvim
 export VISUAL=nvim
 
-# Some more ls aliases
-alias ls='ls --color=auto'
-alias la='ls -al'
+# Added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# Grep alias
-alias grep='grep --color=auto'
+# Added bash aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
-# Tmux aliases
-alias dev='~/scripts/dev-tmux'
-alias job='~/scripts/job-tmux ~/vlc job'
-
-# Python aliases and paths
-alias python=python3.7
+# Python Path
 export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 # Some paths
@@ -51,12 +45,6 @@ export VULKAN_SDK=~/vulkan/1.1.108.0/x86_64
 export PATH=$VULKAN_SDK/bin:$PATH
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # Create python virtual environment
 function create-venv() {
@@ -100,6 +88,3 @@ function finish(){
 
 # Run when the terminal exits
 trap finish EXIT
-
-# Added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
