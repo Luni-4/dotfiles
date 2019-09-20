@@ -63,24 +63,6 @@ function 0x0(){
     curl -F'file=@'$1 https://0x0.st
 }
 
-# Single git patch function
-function spatch(){
-    [ -d .git ] || return
-    while IFS=';' read -r name mail
-    do
-        git spatch "$mail" $1 $2
-    done <~/name_email.txt
-}
-
-# Multiple git patch function
-function mpatch(){
-    [ -d .git ] || return
-    while IFS=';' read -r name mail
-    do
-        git mpatch "$mail" $1 $2
-    done <~/name_email.txt
-}
-
 # Finish function
 function finish(){
     [ -d .git ] && git config --local --remove-section user
