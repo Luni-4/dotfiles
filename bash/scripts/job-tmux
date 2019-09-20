@@ -2,10 +2,10 @@
 
 [ -z $1 ] || cd $1
 
-while IFS=';' read -r name mail
+while read -r name
 do
     [ -d .git ] && git config --local user.name "$name"
-done <~/name_email.txt
+done <~/name.txt
 
 tmux new-session -d
 tmux split-window -h
