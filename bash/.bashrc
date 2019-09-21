@@ -25,7 +25,7 @@ export VISUAL=nvim
 # Added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# Added bash aliases
+# Add bash aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # Python Path
