@@ -32,7 +32,7 @@ alias grb2='git rebase -i HEAD~2'
 alias grh='git reset --hard'
 alias grs='git reset --soft'
 alias gst='git stash'
-alias gsp='git stash pop'
+alias gstp='git stash pop'
 alias gs='git status'
 
 # Tmux aliases
