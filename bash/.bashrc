@@ -70,3 +70,5 @@ function finish(){
 
 # Run when the terminal exits
 trap finish EXIT
+
+exec fish
