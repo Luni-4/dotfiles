@@ -2,9 +2,13 @@
 
 [ -z $1 ] || cd $1
 
+# Close all opened windows and sessions
+tmux kill-session -t 0 > /dev/null 2>&1
+
 tmux new-session -d
-tmux split-window -h
-tmux split-window -v
+tmux new-window
 [ -z $2 ] || tmux rename-window $2
-tmux select-pane -t 1
+tmux new-window
+[ -z $2 ] || tmux rename-window $2
+tmux select-window -t 1
 tmux -2 attach-session -d
