@@ -2,6 +2,10 @@
 " ===  General settings  ===
 " ==========================
 
+"Load plugins
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+execute 'source ' . s:path . '/plugins.vim'
+
 "No compatibility with vi
 set nocompatible
 
