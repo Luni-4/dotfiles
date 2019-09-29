@@ -98,7 +98,7 @@ nnoremap <S-q> :q!<CR>
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 "Remap p using a register
-"nnoremap p "0p
+nnoremap p "0p
 
 " Use F5 to refresh the current file
 nnoremap <F5> :e %<CR>
