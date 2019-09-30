@@ -4,14 +4,11 @@ call plug#begin()
 Plug 'rust-lang/rust.vim'
 
 " Fast and hackable completion framework for Neovim
+Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-ultisnips'
 
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'ncm2/ncm2-rst-subscope'
 call plug#end()
