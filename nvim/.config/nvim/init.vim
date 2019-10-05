@@ -95,21 +95,21 @@ set shortmess+=c
 nmap <S-s> :w<CR>
 
 "Automatically write software name and author
-nnoremap scratch :0r ~/.vim/scratch.txt
+nnoremap scratch :0r ~/.vim/scratch.txt<CR>
 
-"Enable/disable line numbers with Shift+l
+"Enable/Disable line numbers with Shift+l
 nnoremap <S-l> :set nonumber!<CR>
 
-"Discarding changes in exit with Shift+q
+"Discard changes in exit with Shift+q
 nnoremap <S-q> :q!<CR>
 
 "Clear word highlighting using Ctrl+L
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
-"Remap p using a register
+"Delete something without erasing the register
 nnoremap p "0p
 
-" Use F5 to refresh the current file
+"Use F5 to refresh the current file
 nnoremap <F5> :e %<CR>
 
 "Use Tab and Shift+Tab to indent and unindent a selection
@@ -143,5 +143,5 @@ set autoread
 "Set file to save undo changes
 set undofile
 
-" Run rustfmt on saving Rust files
+"Run rustfmt before saving Rust files
 let g:rustfmt_autosave = 1
