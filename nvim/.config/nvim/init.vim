@@ -129,7 +129,7 @@ autocmd BufRead,BufNewFile *.md set filetype=text
 
 "Strip trailing whitespaces for some programming languages
 autocmd FileType c,cc,cxx,cpp,h,hpp,python,ruby,vim
-      \autocmd BufWritePre <buffer> %s/\s\+$//e
+  \ autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "Strip trailing whitespaces for Rust
 autocmd BufWritePre *.rs :%s/\s\+$//e
