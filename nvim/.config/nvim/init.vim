@@ -128,7 +128,7 @@ autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72
 autocmd BufRead,BufNewFile *.md set filetype=text
 
 "Strip trailing whitespaces for some programming languages
-autocmd FileType c,cc,cxx,cpp,h,hpp,python,ruby,vim
+autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,vim
   \ autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "Strip trailing whitespaces for Rust
