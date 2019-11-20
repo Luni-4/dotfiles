@@ -11,12 +11,12 @@
   namend = commit --amend --all --no-edit
   spatch = "!f() { \
       rm -rf patches; \
-      git format-patch "$2" "$3" -o patches origin; \
+      git format-patch "$2" "$3" -o patches master; \
       git send-email --to "$1" patches; \
   }; f"
   mpatch = "!f() { \
       rm -rf patches; \
-      git format-patch "$2" "$3" -n -o patches origin; \
+      git format-patch "$2" "$3" -n -o patches master; \
       git send-email --compose --no-chain-reply-to --to "$1" patches; \
   }; f"
   github-repo = "!f() { \
