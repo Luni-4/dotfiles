@@ -4,5 +4,3 @@
 
 # Include .bashrc if it exists
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
-exec fish
