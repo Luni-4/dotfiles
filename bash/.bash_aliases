@@ -5,7 +5,7 @@ alias la='ls -al'
 # Grep alias
 alias grep='grep --color=auto'
 
-# Vim alias
+# Nvim aliases
 alias vim='nvim'
 alias nvim-update='nvim -u ~/.config/nvim/plugins.vim +PlugInstall +PlugUpdate \
                    +UpdateRemotePlugins +qa'
