@@ -46,7 +46,12 @@ alias gs='git status'
 
 # Tmux aliases
 alias dev='~/scripts/dev-tmux'
-alias job='~/scripts/job-tmux ~/vlc job'
+alias vlc-dev='~/scripts/vlc-tmux ~/vlc vlc'
+alias vlmc-dev='~/scripts/vlc-tmux ~/vlmc vlmc'
+
+# Vlc git-patch aliases
+alias vlc-spatch='git spatch vlc-devel@videolan.org'
+alias vlc-mpatch='git mpatch vlc-devel@videolan.org'
 
 # Python alias
 alias python='python3.7'
