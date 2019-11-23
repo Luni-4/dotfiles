@@ -32,17 +32,27 @@ export VISUAL=nvim
 # Add bash aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
-# Python Path
-export PYTHONPATH=/usr/local/lib/python3.7/site-packages
+# System paths
+export PATH=/usr/local/bin:$HOME/.local/bin:/usr/local/lib:$PATH
 
-# Some paths
-PATHS=/usr/local/cuda-9.0/bin:/usr/local/lib:$HOME/Documenti/mxe/usr/bin
-export PATH=$PATHS:$PATH
+# Cargo path
+export PATH=$HOME/.cargo/bin:$PATH
+
+# Cuda path
+export PATH=/usr/local/cuda-9.0/bin:$PATH
+
+# Mxe path
+export PATH=$HOME/Documenti/mxe/usr/bin:$PATH
+
+# Linker paths
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
-# Pkg-config path
+# Pkg-config paths
 PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG
+
+# Python path
+export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 # Vulkan Lunar-G
 export VULKAN_SDK=~/vulkan/1.1.108.0/x86_64
@@ -74,5 +84,3 @@ function finish(){
 
 # Run when the terminal exits
 trap finish EXIT
-
-exec fish
