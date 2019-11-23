@@ -32,7 +32,7 @@ export VISUAL=nvim
 export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 # Some paths
-PATHS=/usr/local/cuda-9.0/bin:/usr/local/lib:~/Documenti/mxe/usr/bin
+PATHS=/usr/local/cuda-9.0/bin:/usr/local/lib:$HOME/Documenti/mxe/usr/bin
 export PATH=$PATHS:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
