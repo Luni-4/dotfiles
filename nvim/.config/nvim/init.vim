@@ -16,6 +16,9 @@ set nocompatible
 "Enable true color
 set termguicolors
 
+"Set base-16 theme called ocean
+colorscheme base16-ocean
+
 "Show incomplete commands in the right-side of the screen's last line
 set showcmd
 

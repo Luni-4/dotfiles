@@ -1,9 +1,21 @@
 call plug#begin()
 
-" Rust file detection, syntax highlighting, formatting, syntastic integration...
+"Rust file detection, syntax highlighting, formatting, syntastic integration...
 Plug 'rust-lang/rust.vim'
 
-" Fast and hackable completion framework for Neovim
+"Fish syntax highlighting, formatting...
+Plug 'dag/vim-fish'
+
+"Meson syntax highlighting, formatting...
+Plug 'igankevich/mesonic'
+
+"Opencl syntax highlighting, formatting
+Plug 'chitalu/vim-opencl'
+
+"Base-16 vim themes
+Plug 'chriskempson/base16-vim'
+
+"Fast and hackable completion framework for Neovim
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
 
