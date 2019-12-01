@@ -77,6 +77,9 @@ set wildignore+=.git,*.o,*.obj,*.pyc,*.pyo,__pycache__,*.stackdump,*~.
 "Ignore case during autocompletion
 set wildignorecase
 
+"Set spell dictionaries
+set spelllang=en,it
+
 "Error if there are trailing spaces
 match ErrorMsg '\s\+$'
 
