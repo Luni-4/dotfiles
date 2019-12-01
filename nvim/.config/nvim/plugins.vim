@@ -12,6 +12,10 @@ Plug 'igankevich/mesonic'
 "Opencl syntax highlighting, formatting
 Plug 'chitalu/vim-opencl'
 
+"Pandoc support and markdown syntax highlighting
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
 "Base-16 vim themes
 Plug 'chriskempson/base16-vim'
 
