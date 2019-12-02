@@ -19,15 +19,15 @@ function fish_prompt
 
     # Print name and hostname
     set_color d95
-    echo -n (whoami)'@power '
+    echo -n (whoami)'@power'
     set_color normal
 
     # Print VCS (git)
     set -l vcs (__fish_vcs_prompt)
     if test -n "$vcs"
-         echo -n '('
+         echo -n ' ('
          set_color d9c
-         printf "%s" (string replace -r ' \((\w+)\)' '$1' (__fish_vcs_prompt))
+         printf "%s" (string sub -s 3 $vcs | string replace ')' '')
          set_color normal
          echo -n ') '
     end
