@@ -34,6 +34,12 @@ set synmaxcol=256
 "Disable function folding
 set nofoldenable
 
+"Tab is four spaces
+set tabstop=4 shiftwidth=4
+
+"Use spaces instead of tab in insert mode
+set expandtab
+
 "Show whitespaces
 set list listchars=tab:▸·,trail:·
 
@@ -55,7 +61,7 @@ set mouse=a
 "Use spaces for tab
 set expandtab
 
-"Scroll horizontally if a line is wider than screen size
+"Scroll horizontally if a line is wider than the screen size
 set nowrap
 
 "Do not redraw the screen until an operation is complete
@@ -82,6 +88,9 @@ set spelllang=en,it
 
 "Error if there are trailing spaces
 match ErrorMsg '\s\+$'
+
+"Set /g by default
+set gdefault
 
 "Enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
