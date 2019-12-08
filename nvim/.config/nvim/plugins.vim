@@ -19,6 +19,8 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 "Base-16 vim themes
 Plug 'chriskempson/base16-vim'
 
+"Simplify words search and replacement
+Plug 'tpope/vim-abolish'
 
 "Handle files using Unix commands
 Plug 'tpope/vim-eunuch'
