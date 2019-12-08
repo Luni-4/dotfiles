@@ -19,7 +19,11 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 "Base-16 vim themes
 Plug 'chriskempson/base16-vim'
 
-"Install NerdTree file manager
+
+"Handle files using Unix commands
+Plug 'tpope/vim-eunuch'
+
+"Install the NerdTree file manager
 Plug 'scrooloose/nerdtree'
 
 "Fast and hackable completion framework for Neovim
