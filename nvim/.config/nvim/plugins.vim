@@ -19,6 +19,9 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 "Base-16 vim themes
 Plug 'chriskempson/base16-vim'
 
+"Install NerdTree file manager
+Plug 'scrooloose/nerdtree'
+
 "Fast and hackable completion framework for Neovim
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'

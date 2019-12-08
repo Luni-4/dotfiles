@@ -109,6 +109,9 @@ set shortmess+=c
 "Save files using Shift+S
 nmap <S-s> :w<CR>
 
+"Open NerdToggle using Ctrl+n
+nmap <C-n> :NERDTreeToggle<CR>
+
 "Automatically write software name and author
 nnoremap scratch :0r ~/.vim/scratch.txt<CR>
 
@@ -131,23 +134,30 @@ nnoremap <F5> :e %<CR>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-
 " ==========================
 " ===  Files Settings   ===
 " ==========================
 
-"Set git commit messages textwidth and draw the relative line
-autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72
+augroup buffers_and_files
+    autocmd!
 
-"Use text syntax highlighting for markdown
-autocmd BufRead,BufNewFile *.md set filetype=text
+    "Set git commit messages textwidth and draw the relative line
+    autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72
 
-"Strip trailing whitespaces for some programming languages
-autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,vim
-  \ autocmd BufWritePre <buffer> :%s/\s\+$//e
+    "Use text syntax highlighting for markdown
+    autocmd BufRead,BufNewFile *.md set filetype=text
 
-"Strip trailing whitespaces for Rust
-autocmd BufWritePre *.rs :%s/\s\+$//e
+    "Strip trailing whitespaces for some programming languages
+    autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,vim
+      \ autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+    "Strip trailing whitespaces for Rust
+    autocmd BufWritePre *.rs :%s/\s\+$//e
+
+    "Automatically close vim if NERDTree is the only buffer left
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+      \ b:NERDTree.isTabTree()) | q | endif
+augroup end
 
 "Hide files, don't close them, if the current buffer has unsaved changes
 set hidden
