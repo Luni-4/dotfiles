@@ -117,8 +117,6 @@ set shortmess+=c
 
 "Save files using Shift+S
 nmap <S-s> :update<CR>
-vmap <S-s> <C-C>:update<CR>
-imap <S-s> <C-O>:update<CR>
 
 "Open NerdToggle using Ctrl+n
 nmap <C-n> :NERDTreeToggle<CR>
