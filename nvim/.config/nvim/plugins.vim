@@ -25,6 +25,12 @@ Plug 'tpope/vim-abolish'
 "Handle files using Unix commands
 Plug 'tpope/vim-eunuch'
 
+"Simplify quoting/parenthesizing words and sentences
+Plug 'tpope/vim-surround'
+
+"Repeat the maps of the plugins that support this plugin
+Plug 'tpope/vim-repeat'
+
 "Install the NerdTree file manager
 Plug 'scrooloose/nerdtree'
 
