@@ -61,8 +61,17 @@ set mouse=a
 "Use spaces for tab
 set expandtab
 
+"Reduce time in milliseconds to wait for a key code sequence to complete
+set ttimeoutlen=20
+
 "Scroll horizontally if a line is wider than the screen size
 set nowrap
+
+"Show at least one line above/below the cursor
+set scrolloff=1
+
+"Move the cursor horizontally in a better way
+set sidescrolloff=2
 
 "Do not redraw the screen until an operation is complete
 set lazyredraw
@@ -107,7 +116,9 @@ set shortmess+=c
 " ==========================
 
 "Save files using Shift+S
-nmap <S-s> :w<CR>
+nmap <S-s> :update<CR>
+vmap <S-s> <C-C>:update<CR>
+imap <S-s> <C-O>:update<CR>
 
 "Open NerdToggle using Ctrl+n
 nmap <C-n> :NERDTreeToggle<CR>
@@ -144,8 +155,9 @@ augroup buffers_and_files
     "Set git commit messages textwidth and draw the relative line
     autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72
 
-    "Use text syntax highlighting for markdown
-    autocmd BufRead,BufNewFile *.md set filetype=text
+    "Do not break words and enable the spell checker for markdown and text
+    "files
+    autocmd FileType markdown,text setlocal linebreak spell
 
     "Strip trailing whitespaces for some programming languages
     autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,vim
@@ -167,6 +179,10 @@ set autoread
 
 "Set file to save undo changes
 set undofile
+
+"Highlight C code
+let c_gnu = 1
+let c_space_errors = 1
 
 "Run rustfmt before saving Rust files
 let g:rustfmt_autosave = 1
