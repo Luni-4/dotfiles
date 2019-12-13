@@ -2,14 +2,14 @@
 
 [ -z $1 ] || cd $1
 
-# Close all opened sessions
-tmux kill-session -t 0 > /dev/null 2>&1
+# Close a prior session
+tmux kill-session -t dev > /dev/null 2>&1
 
-tmux new-session -d
+tmux new-session -s dev -d
 tmux rename-window dev
 tmux new-window
 tmux rename-window build
 tmux new-window
 tmux rename-window run
 tmux select-window -t 1
-tmux -2 attach-session -d
+tmux attach -t dev
