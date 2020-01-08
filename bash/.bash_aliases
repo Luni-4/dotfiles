@@ -55,3 +55,6 @@ alias vlc-mpatch='git mpatch vlc-devel@videolan.org'
 
 # Python alias
 alias python='python3.7'
+
+# 0x0 alias
+alias 0x0='curl -F'file=@'$1 https://0x0.st'
