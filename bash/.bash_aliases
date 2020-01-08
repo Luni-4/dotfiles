@@ -53,8 +53,10 @@ alias vlmc-dev='~/scripts/vlc-tmux ~/vlmc vlmc'
 alias vlc-spatch='git spatch vlc-devel@videolan.org'
 alias vlc-mpatch='git mpatch vlc-devel@videolan.org'
 
-# Python alias
+# Python aliases
 alias python='python3.7'
+alias pyvenv-create='~/scripts/python-venv-create'
+alias pyvenv='~/scripts/python-venv'
 
 # 0x0 alias
 alias 0x0='curl -F'file=@'$1 https://0x0.st'
