@@ -140,21 +140,21 @@ nnoremap <F5> :e %<CR>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-"Move between windows with Alt-hjkl in each mode
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+"Move between windows with Alt-hjkl in terminal, insert and normal mode
+tnoremap <silent> <A-h> <C-\><C-N><C-w>h
+tnoremap <silent> <A-j> <C-\><C-N><C-w>j
+tnoremap <silent> <A-k> <C-\><C-N><C-w>k
+tnoremap <silent> <A-l> <C-\><C-N><C-w>l
+inoremap <silent> <A-h> <C-\><C-N><C-w>h
+inoremap <silent> <A-j> <C-\><C-N><C-w>j
+inoremap <silent> <A-k> <C-\><C-N><C-w>k
+inoremap <silent> <A-l> <C-\><C-N><C-w>l
+nnoremap <silent> <A-h> <C-w>h
+nnoremap <silent> <A-j> <C-w>j
+nnoremap <silent> <A-k> <C-w>k
+nnoremap <silent> <A-l> <C-w>l
 
-" Map Alt-1..9 to opening the corresponding tab
+"Map Alt-1..9 to move between tabs in terminal, insert and normal mode
 for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]
   let tab_n = '> :tabnext ' . string(n) . '<CR>'
   let tab_ti = '> <C-\><C-N>:tabnext ' . string(n) . '<CR>'
