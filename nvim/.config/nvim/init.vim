@@ -130,6 +130,10 @@ nnoremap <S-l> :set nonumber!<CR>
 "Discard changes in exit with Shift+q
 nnoremap <S-q> :q!<CR>
 
+"Use Ctrl+i and Ctrl+b to run the isort and black commands
+nnoremap <silent> <C-i> :Isort<CR>
+nnoremap <silent> <C-b> :Black<CR>
+
 "Clear word highlighting using Ctrl+L
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
@@ -201,6 +205,12 @@ set undofile
 "Highlight C code
 let c_gnu = 1
 let c_space_errors = 1
+
+"Max Python line length accepted
+let g:black_linelength = 79
+
+"Disable the isort default mapping for the visual mode
+let g:vim_isort_map = ''
 
 "Run rustfmt before saving Rust files
 let g:rustfmt_autosave = 1

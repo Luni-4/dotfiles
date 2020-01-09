@@ -3,6 +3,12 @@ call plug#begin()
 "Rust file detection, syntax highlighting, formatting, syntastic integration...
 Plug 'rust-lang/rust.vim'
 
+"Python file formatting
+Plug 'psf/black'
+
+"Order Python imports correctly
+Plug 'fisadev/vim-isort'
+
 "Fish syntax highlighting, formatting...
 Plug 'dag/vim-fish'
 
