@@ -133,9 +133,6 @@ nnoremap <S-q> :q!<CR>
 "Clear word highlighting using Ctrl+L
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
-"Delete something without erasing the register
-nnoremap p "0p
-
 "Use F5 to refresh the current file
 nnoremap <F5> :e %<CR>
 
