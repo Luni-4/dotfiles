@@ -9,6 +9,9 @@ Plug 'psf/black'
 "Order Python imports correctly
 Plug 'fisadev/vim-isort'
 
+"Convert hex to dec and vice versa
+Plug 'rr-/vim-hexdec'
+
 "Fish syntax highlighting, formatting...
 Plug 'dag/vim-fish'
 
