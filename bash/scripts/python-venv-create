@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z $1 ] || return
+[ -z $1 ] && exit
 
 mkdir ~/$1
 cd ~/$1

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-[ -z $1 ] || return
+[ -z $1 ] && exit
 
 source ~/$1/venv/bin/activate
