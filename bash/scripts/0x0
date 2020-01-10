@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ -z $1 ] && exit
+
+curl -s -F'file=@'$1 https://0x0.st | tr -d '\n' | xclip -selection clipboard

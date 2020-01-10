@@ -59,4 +59,4 @@ alias pyvenv-create='~/scripts/python-venv-create'
 alias pyvenv='~/scripts/python-venv'
 
 # 0x0 alias
-alias 0x0='curl -F'file=@'$1 https://0x0.st'
+alias 0x0='~/scripts/0x0'
