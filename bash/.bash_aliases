@@ -36,6 +36,7 @@ alias gpuf='git push -f'
 alias gpro='git prune origin'
 alias gprr='git prune remote'
 alias grb='git rebase -i'
+alias grbm='git rebase master'
 alias grb2='git rebase -i HEAD~2'
 alias gr='git reset'
 alias grh='git reset --hard'
@@ -57,6 +58,9 @@ alias vlc-mpatch='git mpatch vlc-devel@videolan.org'
 alias python='python3.7'
 alias pyvenv-create='~/scripts/python-venv-create'
 alias pyvenv='~/scripts/python-venv'
+
+# Docker alias
+alias docker-clean='sudo docker system prune -a --volumes'
 
 # 0x0 alias
 alias 0x0='~/scripts/0x0'
