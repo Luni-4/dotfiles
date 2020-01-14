@@ -2,4 +2,14 @@
 
 [ -z $1 ] && exit
 
-curl -s -F'file=@'$1 https://0x0.st | tr -d '\n' | xclip -selection clipboard
+IMG=$1
+
+if [ $1 = "-i" ]
+then
+   IMG=/tmp/test_image.png
+   xclip -selection clipboard -t image/png -o > $IMG
+fi
+
+curl -s -F'file=@'$IMG https://0x0.st | tr -d '\n' | xclip -selection clipboard
+
+[ $1 = "-i" ] && rm -rf $IMG
