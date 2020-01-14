@@ -1,8 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 set -ex
-./waf uninstall
-export PKG_CONFIG_PATH=/usr/local/lib
 ./waf configure \
     --enable-libmpv-shared \
     --disable-vdpau \

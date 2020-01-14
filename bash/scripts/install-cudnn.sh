@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install cudnn package on Ubuntu
 # ./install-cudnn cudnn package cudnn package version
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install Nvidia driver through .run installer
 # ./install-nvidia PACKAGE [-u]
 

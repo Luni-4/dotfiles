@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 set -ex
 ./configure \
     --disable-debug \
@@ -21,5 +22,6 @@ set -ex
     --enable-shared \
     --enable-version3 \
     --enable-nonfree
+
 make -j4
 make install

@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install CUDA Toolkit through .run installer
 # ./install-cuda-toolkit TOOLKIT VERSION [-u]
 

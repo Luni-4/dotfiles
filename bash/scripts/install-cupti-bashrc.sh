@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install libcupti and set bashrc paths
 # ./install-cupti-bashrc VERSION
 
