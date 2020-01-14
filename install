@@ -51,7 +51,7 @@ def main():
     s = "Installing"
 
     additional_stow_args = []
-    exclude_packages = set(["scripts"])
+    exclude_packages = set()
     provided_package_names = set()
     for arg in sys.argv[1:]:
         if arg.startswith("-"):
