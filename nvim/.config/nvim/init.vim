@@ -162,9 +162,9 @@ nnoremap <silent> <A-l> <C-w>l
 for n in [1, 2, 3, 4, 5, 6, 7, 8, 9]
   let tab_n = '> :tabnext ' . string(n) . '<CR>'
   let tab_ti = '> <C-\><C-N>:tabnext ' . string(n) . '<CR>'
-  call execute('nnoremap <silent> <A-' . string(n) . tab_n)
-  call execute('inoremap <silent> <A-' . string(n) .  tab_ti)
-  call execute('tnoremap <silent> <A-' . string(n) . tab_ti)
+  call execute('nnoremap <silent> <C-f' . string(n) . tab_n)
+  call execute('inoremap <silent> <C-f' . string(n) .  tab_ti)
+  call execute('tnoremap <silent> <C-f' . string(n) . tab_ti)
 endfor
 
 " ==========================
