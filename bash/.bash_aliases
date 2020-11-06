@@ -55,7 +55,7 @@ alias vlc-spatch='git spatch vlc-devel@videolan.org'
 alias vlc-mpatch='git mpatch vlc-devel@videolan.org'
 
 # Python aliases
-alias python='python3.7'
+alias python='python3'
 alias pyvenv-create='~/scripts/python-venv-create'
 alias pyvenv='~/scripts/python-venv'
 
