@@ -43,6 +43,9 @@ Plug 'tpope/vim-repeat'
 "Install the NerdTree file manager
 Plug 'scrooloose/nerdtree'
 
+"Install CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "Fast and hackable completion framework for Neovim
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
