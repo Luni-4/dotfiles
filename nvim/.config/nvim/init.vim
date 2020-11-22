@@ -186,6 +186,12 @@ augroup buffers_and_files
     "files
     autocmd FileType markdown,text setlocal linebreak spell
 
+    "Add an header to new shell scripts
+    autocmd BufNewFile *.sh 0put =\"#!/usr/bin/bash\"|$
+
+    "Add an header to new Python scripts
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\"|$
+
     "Strip trailing whitespaces for some programming languages
     autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,vim
       \ autocmd BufWritePre <buffer> :%s/\s\+$//e
