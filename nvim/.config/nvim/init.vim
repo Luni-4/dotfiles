@@ -110,7 +110,6 @@ set completeopt=noinsert,menuone,noselect
 "Disable autocompletion messages
 set shortmess+=c
 
-
 " ==========================
 " ===  Keymap bindings   ===
 " ==========================
@@ -120,6 +119,15 @@ nmap <S-s> :update<CR>
 
 "Open NerdToggle using Ctrl+n
 nmap <C-n> :NERDTreeToggle<CR>
+
+"GoTo code navigation using CoC
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+"Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 "Automatically write software name and author
 nnoremap scratch :0r ~/.vim/scratch.txt<CR>
@@ -214,3 +222,16 @@ let g:vim_isort_map = ''
 
 "Run rustfmt before saving Rust files
 let g:rustfmt_autosave = 1
+
+" ==========================
+" ===     Functions      ===
+" ==========================
+
+"Show Rust documentation using CoC
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
