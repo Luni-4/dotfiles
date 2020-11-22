@@ -129,9 +129,6 @@ nmap <silent> gr <Plug>(coc-references)
 "Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-"Automatically write software name and author
-nnoremap scratch :0r ~/.vim/scratch.txt<CR>
-
 "Enable/Disable line numbers with Shift+l
 nnoremap <S-l> :set nonumber!<CR>
 
