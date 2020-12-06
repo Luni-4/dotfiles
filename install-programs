@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+
+import argparse
+import collections
+import subprocess
+import typing as T
+
+# Define a namedtuple to describe a program
+Program = collections.namedtuple(
+    "Program",
+    field_names=["command", "is_snap", "run_script"],
+    defaults=["", False, None],
+)
+
+# Common programs between the two operating systems
+PROGRAMS = [
+    Program("alacritty"),  # alacritty terminal
+    Program("curl"),  # curl
+    Program("fish"),  # fish shell
+    Program("mpv"),  # mpv player
+    Program("neovim"),  # neovim editor
+    Program("npm"),  # npm
+    Program(
+        run_script=["curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"]
+    ),  # rust
+    Program("snapd"),  # snap package manager
+    Program("stow"),  # stow
+    Program("telegram-desktop", is_snap=True),  # telegram desktop
+    Program("thunderbird"),  # thunderbird
+    Program("wget"),  # wget
+]
+
+# Only Ubuntu programs
+ONLY_UBUNTU_PROGRAMS = [
+    Program(
+        run_script=[
+            "wget https://github.com/sharkdp/hyperfine/releases/download/v1.11.0/hyperfine_1.11.0_amd64.deb",
+            "sudo dpkg -i hyperfine_1.11.0_amd64.deb",
+        ],
+    ),  # hyperfine benchmarker
+    Program("tmux"),  # tmux terminal multiplexer
+]
+
+# Only ArchLinux programs
+ONLY_ARCH_LINUX_PROGRAMS = [
+    Program("firefox"),  # Mozilla Firefox
+    Program("hyperfine"),  # hyperfine benchmarker
+    Program("tmux --noconfirm"),  # tmux terminal multiplexer
+]
+
+# Install programs for a determined operating system
+def install_programs(
+    use_sudo: T.List[str], install_command: T.List[str], programs: T.List["Program"]
+) -> None:
+    for program in programs:
+        # Check whether a program needs to be installed through snap
+        if program[1]:
+            use_command = ["snap", "install"]
+        else:
+            use_command = install_command
+
+        # Check whether a program needs to be installed through a script
+        if program[2]:
+            for command in program[2]:
+                subprocess.run(command.split())
+        else:
+            subprocess.run(use_sudo + use_command + program[0].split())
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        prog="install",
+        description="This tool installs my own software on different "
+        "Linux distributions (Ubuntu and ArchLinux)",
+    )
+
+    # Optional args
+    parser.add_argument(
+        "-a",
+        "--arch-linux",
+        action="store_true",
+        help="Choose ArchLinux as distribution",
+    )
+
+    # Get arguments
+    args = parser.parse_args()
+
+    # Use sudo to install programs
+    use_sudo = ["sudo"]
+
+    if args.arch_linux:
+        install_command = ["pacman", "-S"]
+    else:
+        # Avoid stale index
+        subprocess.run(use_sudo + ["apt-get", "update"])
+
+        install_command = ["apt-get", "install"]
+
+    # Install common programs
+    install_programs(use_sudo, install_command, PROGRAMS)
+
+    # According to the chosen operating system, install ONLY the
+    # requested programs
+    if args.arch_linux:
+        install_programs(use_sudo, install_command, ONLY_ARCH_LINUX_PROGRAMS)
+    else:
+        install_programs(use_sudo, install_command, ONLY_UBUNTU_PROGRAMS)
+
+
+if __name__ == "__main__":
+    main()
