@@ -15,7 +15,7 @@ Program = collections.namedtuple(
 # Common programs between the two operating systems
 PROGRAMS = [
     Program("alacritty"),  # alacritty terminal
-    Program("autoconf"), # autotools
+    Program("autoconf"),  # autotools
     Program("curl"),  # curl
     Program("fish"),  # fish shell
     Program("mpv"),  # mpv player
@@ -33,7 +33,7 @@ PROGRAMS = [
 
 # Only Ubuntu programs
 ONLY_UBUNTU_PROGRAMS = [
-    Program("build-essential"), # build tools
+    Program("build-essential"),  # build tools
     Program(
         run_script=[
             "wget https://github.com/sharkdp/hyperfine/releases/download/v1.11.0/hyperfine_1.11.0_amd64.deb",
@@ -45,7 +45,7 @@ ONLY_UBUNTU_PROGRAMS = [
 
 # Only ArchLinux programs
 ONLY_ARCH_LINUX_PROGRAMS = [
-    Program("firefox"),  # Mozilla Firefox
+    Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
     Program("tmux --noconfirm"),  # tmux terminal multiplexer
 ]
