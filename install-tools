@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Upgrade pip3 verion
+python3 -m pip install --upgrade pip
+
+# Install Python formatting tools in home directory
+pip3 install --user black isort
+
+# Install meson and ninja
+pip3 install --user meson ninja
+
+# Update rustup
+rustup self update
+
+# Update Rust stable version
+rustup update stable
+
+# Install rustfmt and clippy
+rustup component add rustfmt clippy
