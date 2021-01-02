@@ -40,7 +40,7 @@ PROGRAMS = [
 ONLY_UBUNTU_PROGRAMS = [
     Program(
         run_script=[
-            "sudo add-apt-repository ppa:aslatter/ppa",
+            "sudo add-apt-repository ppa:aslatter/ppa -y",
             "sudo apt install alacritty",
         ],
     ),  # alacritty terminal
