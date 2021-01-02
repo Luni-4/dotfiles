@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import logging
 import os
 import subprocess
 import sys
@@ -8,7 +7,6 @@ from pathlib import Path
 from typing import Iterable
 
 dotfiles_path = Path(__file__).parent
-l = logging.getLogger(__name__)
 
 
 def is_package(path: Path) -> bool:
@@ -32,12 +30,10 @@ def stow(
         f"--dir={dir!s}",
         f"--target={target!s}",
         "--no-folding",
-        f"--verbose={1 if l.getEffectiveLevel() >= logging.INFO else 2}",
         *args,
         *package_names,
     ]
 
-    l.info(f"Calling {cmd}")
     return subprocess.call(cmd, stdout=sys.stdout, stderr=sys.stderr)
 
 
@@ -48,9 +44,6 @@ def main():
     # -S, --stow
     # -R, --restow
     # -D, --delete
-    l.addHandler(logging.StreamHandler())
-    l.setLevel(logging.DEBUG)
-    s = "Installing"
 
     additional_stow_args = []
     exclude_packages = set()
@@ -67,16 +60,8 @@ def main():
     available_package_names = {path.name for path in available_package_paths}
     package_names = provided_package_names & available_package_names
 
-    if "-D" in additional_stow_args:
-        s = "Uninstalling"
-
     if not package_names or len(package_names) == len(available_package_names):
         package_names = available_package_names - exclude_packages
-        l.info(f"{s} all packages")
-    else:
-        l.info(f"{s} {len(package_names)} packages")
-
-    l.debug(f"Packages: {', '.join(sorted(package_names))}")
 
     result = stow(package_names, args=additional_stow_args)
 
