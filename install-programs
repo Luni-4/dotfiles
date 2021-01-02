@@ -28,6 +28,7 @@ PROGRAMS = [
     Program("stow"),  # stow
     Program("telegram-desktop", is_snap=True),  # telegram desktop
     Program("thunderbird"),  # thunderbird
+    Program("VLC", is_snap=True), # vlc
     Program("wget"),  # wget
 ]
 
