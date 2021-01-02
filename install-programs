@@ -16,6 +16,7 @@ Program = collections.namedtuple(
 PROGRAMS = [
     # apt and pacman packages
     Program("autoconf"),  # autotools
+    Program("cmake"), # cmake
     Program("curl"),  # curl
     Program("fish"),  # fish shell
     Program("mpv"),  # mpv player
