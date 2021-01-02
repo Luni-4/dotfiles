@@ -23,7 +23,7 @@ PROGRAMS = [
     Program("npm"),  # npm
     Program(
         run_script=[
-            "curl --proto \"=https\" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+            'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y'
         ]
     ),  # rust
     Program("snapd"),  # snap package manager
@@ -71,7 +71,14 @@ def install_programs(
         # Check whether a program needs to be installed through a script
         if program[2]:
             for command in program[2]:
-                subprocess.run(command.split())
+                ps = subprocess.Popen(
+                    command,
+                    shell=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                )
+                output = ps.communicate()[0]
+                print(output.decode())
         else:
             subprocess.run(use_sudo + use_command + program[0].split())
 
