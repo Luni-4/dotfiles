@@ -52,6 +52,7 @@ ONLY_UBUNTU_PROGRAMS = [
         ],
     ),  # hyperfine benchmarker
     Program("python3-pip"),  # pip3
+    Program("python3-venv"), # venv used by black
     Program("tmux"),  # tmux terminal multiplexer
 ]
 
