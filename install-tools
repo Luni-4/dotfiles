@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Install nvim update
+nvim-update
+
 # Upgrade pip3 verion
-python3 -m pip install --upgrade pip
+python3 -m pip3 install --upgrade pip3
 
 # Install Python formatting tools in home directory
 pip3 install --user black isort
