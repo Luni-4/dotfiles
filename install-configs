@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-from typing import Iterable
+import typing as T
 
 dotfiles_path = Path(__file__).parent
 
@@ -19,25 +19,22 @@ def is_package(path: Path) -> bool:
 
 
 def stow(
-    package_names: Iterable[str],
+    package_names: T.List[str],
     dir: Path = dotfiles_path,
     target: Path = Path.home(),
-    args: Iterable[str] = (),
 ) -> int:
 
     cmd = [
         "stow",
         f"--dir={dir!s}",
         f"--target={target!s}",
-        "--no-folding",
-        *args,
         *package_names,
     ]
 
     return subprocess.call(cmd, stdout=sys.stdout, stderr=sys.stderr)
 
 
-def main():
+def main() -> int:
     # -n, --no
     # --adopt
     # -v, --verbose
@@ -45,14 +42,10 @@ def main():
     # -R, --restow
     # -D, --delete
 
-    additional_stow_args = []
     exclude_packages = set()
     provided_package_names = set()
     for arg in sys.argv[1:]:
-        if arg.startswith("-"):
-            additional_stow_args.append(arg)
-        else:
-            provided_package_names.add(arg)
+        provided_package_names.add(arg)
 
     available_package_paths = {
         path for path in dotfiles_path.glob("*") if is_package(path)
@@ -63,7 +56,7 @@ def main():
     if not package_names or len(package_names) == len(available_package_names):
         package_names = available_package_names - exclude_packages
 
-    result = stow(package_names, args=additional_stow_args)
+    result = stow(package_names)
 
     return result
 
