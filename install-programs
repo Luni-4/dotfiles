@@ -22,7 +22,9 @@ PROGRAMS = [
     Program("neovim"),  # neovim editor
     Program("npm"),  # npm
     Program(
-        run_script=["curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"]
+        run_script=[
+            "curl --proto \"=https\" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+        ]
     ),  # rust
     Program("snapd"),  # snap package manager
     Program("stow"),  # stow
@@ -31,7 +33,7 @@ PROGRAMS = [
     # Snap packages
     Program("alacritty --classic", is_snap=True),  # alacritty terminal
     Program("telegram-desktop", is_snap=True),  # telegram desktop
-    Program("vlc", is_snap=True), # vlc
+    Program("vlc", is_snap=True),  # vlc
 ]
 
 # Only Ubuntu programs
@@ -43,7 +45,7 @@ ONLY_UBUNTU_PROGRAMS = [
             "sudo dpkg -i hyperfine_1.11.0_amd64.deb",
         ],
     ),  # hyperfine benchmarker
-    Program("python3-pip"), # pip3
+    Program("python3-pip"),  # pip3
     Program("tmux"),  # tmux terminal multiplexer
 ]
 
@@ -51,7 +53,7 @@ ONLY_UBUNTU_PROGRAMS = [
 ONLY_ARCH_LINUX_PROGRAMS = [
     Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
-    Program("python-pip"), # pip3
+    Program("python-pip"),  # pip3
     Program("tmux --noconfirm"),  # tmux terminal multiplexer
 ]
 
