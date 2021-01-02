@@ -41,6 +41,7 @@ ONLY_UBUNTU_PROGRAMS = [
             "sudo dpkg -i hyperfine_1.11.0_amd64.deb",
         ],
     ),  # hyperfine benchmarker
+    Program("python3-pip"), # pip3
     Program("tmux"),  # tmux terminal multiplexer
 ]
 
@@ -48,6 +49,7 @@ ONLY_UBUNTU_PROGRAMS = [
 ONLY_ARCH_LINUX_PROGRAMS = [
     Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
+    Program("python-pip"), # pip3
     Program("tmux --noconfirm"),  # tmux terminal multiplexer
 ]
 
