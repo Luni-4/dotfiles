@@ -14,7 +14,7 @@ Program = collections.namedtuple(
 
 # Common programs between the two operating systems
 PROGRAMS = [
-    Program("alacritty"),  # alacritty terminal
+    # apt and pacman packages
     Program("autoconf"),  # autotools
     Program("curl"),  # curl
     Program("fish"),  # fish shell
@@ -26,10 +26,12 @@ PROGRAMS = [
     ),  # rust
     Program("snapd"),  # snap package manager
     Program("stow"),  # stow
-    Program("telegram-desktop", is_snap=True),  # telegram desktop
     Program("thunderbird"),  # thunderbird
-    Program("vlc", is_snap=True), # vlc
     Program("wget"),  # wget
+    # Snap packages
+    Program("alacritty --classic", is_snap=True),  # alacritty terminal
+    Program("telegram-desktop", is_snap=True),  # telegram desktop
+    Program("vlc", is_snap=True), # vlc
 ]
 
 # Only Ubuntu programs
