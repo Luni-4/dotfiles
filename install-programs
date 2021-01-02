@@ -31,13 +31,18 @@ PROGRAMS = [
     Program("thunderbird"),  # thunderbird
     Program("wget"),  # wget
     # Snap packages
-    Program("alacritty --classic", is_snap=True),  # alacritty terminal
     Program("telegram-desktop", is_snap=True),  # telegram desktop
     Program("vlc", is_snap=True),  # vlc
 ]
 
 # Only Ubuntu programs
 ONLY_UBUNTU_PROGRAMS = [
+    Program(
+        run_script=[
+            "sudo add-apt-repository ppa:aslatter/ppa",
+            "sudo apt install alacritty",
+        ],
+    ),  # alacritty terminal
     Program("build-essential"),  # build tools
     Program(
         run_script=[
@@ -51,6 +56,7 @@ ONLY_UBUNTU_PROGRAMS = [
 
 # Only ArchLinux programs
 ONLY_ARCH_LINUX_PROGRAMS = [
+    Program("alacritty"), # alacritty terminal,
     Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
     Program("python-pip"),  # pip3
