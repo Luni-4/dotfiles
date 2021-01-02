@@ -96,7 +96,7 @@ def main() -> None:
         # Avoid stale index
         subprocess.run(use_sudo + ["apt-get", "update"])
 
-        install_command = ["apt-get", "install"]
+        install_command = ["apt-get", "-y", "install"]
 
     # Install common programs
     install_programs(use_sudo, install_command, PROGRAMS)
