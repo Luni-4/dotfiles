@@ -15,6 +15,12 @@ def main() -> None:
 
     # Optional args
     parser.add_argument(
+        "--bash",
+        action="store_true",
+        help="Remove .profile and .bashrc files automatically",
+    )
+
+    parser.add_argument(
         "-t",
         "--target",
         type=lambda value: Path(value),
@@ -79,6 +85,11 @@ def main() -> None:
         operation = "-R"
     else:
         operation = "-S"
+
+    # Remove .profile and .bashrc files on new operating systems
+    if args.bash:
+        Path("~/.profile").unlink(True)
+        Path("~/.bashrc").unlink(True)
 
     # Define the stow command
     cmd = [
