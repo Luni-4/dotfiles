@@ -30,6 +30,6 @@ gsettings set org.gnome.shell favorite-apps "[
 'org.gnome.Evince.desktop',
 'com.alacritty.Alacritty.desktop',
 'thunderbird.desktop',
-'telegram-desktop.desktop',
+'telegram.desktop',
 'gnome-system-monitor.desktop'
 ]"

@@ -32,7 +32,6 @@ PROGRAMS = [
     Program("thunderbird"),  # thunderbird
     Program("wget"),  # wget
     # Snap packages
-    Program("telegram-desktop", is_snap=True),  # telegram desktop
     Program("vlc", is_snap=True),  # vlc
 ]
 
@@ -53,6 +52,12 @@ ONLY_UBUNTU_PROGRAMS = [
     ),  # hyperfine benchmarker
     Program("python3-pip"),  # pip3
     Program("python3-venv"), # venv used by black
+    Program(
+        run_script=[
+            "sudo add-apt-repository ppa:atareao/telegram -y",
+            "sudo apt install telegram",
+        ],
+    ),  # telegram-desktop
     Program("tmux"),  # tmux terminal multiplexer
 ]
 
@@ -62,6 +67,7 @@ ONLY_ARCH_LINUX_PROGRAMS = [
     Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
     Program("python-pip"),  # pip3
+    Program("telegram-desktop", is_snap=True),  # telegram-desktop
     Program("tmux --noconfirm"),  # tmux terminal multiplexer
 ]
 
