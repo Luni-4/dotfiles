@@ -66,7 +66,6 @@ def main() -> None:
 
     # Final dotfiles used by stow
     package_names = set()
-    print(available_package_names)
 
     # Remove the duplicated packages passed as input and make the intersection
     # among the two sets in order to maintain only the input packages
