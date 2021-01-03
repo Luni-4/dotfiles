@@ -1,65 +1,97 @@
 #!/usr/bin/env python3
 
-import os
+import argparse
 import subprocess
 import sys
-from pathlib import Path
 import typing as T
-
-dotfiles_path = Path(__file__).parent
-
-
-def is_package(path: Path) -> bool:
-    """Filter out paths that don't represent packages."""
-    if not path.is_dir():
-        return False
-    elif path.name.startswith("."):
-        return False
-    return True
+from pathlib import Path
 
 
-def stow(
-    package_names: T.List[str],
-    dir: Path = dotfiles_path,
-    target: Path = Path.home(),
-) -> int:
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        prog="install-configs",
+        description="This tool installs my dotfiles on various Linux distributions",
+    )
 
+    # Optional args
+    parser.add_argument(
+        "-t",
+        "--target",
+        type=lambda value: Path(value),
+        default=Path.home(),
+        help="Stow target directory",
+    )
+
+    parser.add_argument(
+        "-d",
+        "--dir",
+        type=lambda value: Path(value),
+        default=Path(__file__).parent,
+        help="Stow dotfiles directory",
+    )
+
+    parser.add_argument("-l", "--list", nargs="+", help="List of chosen dotfiles")
+
+    # Mutually exclusive optional parameters
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "-D",
+        "--delete",
+        action="store_true",
+        help="Delete dotfiles",
+    )
+
+    group.add_argument(
+        "-R",
+        "--restow",
+        action="store_true",
+        help="Restow dotfiles",
+    )
+
+    # Get arguments
+    args = parser.parse_args()
+
+    # Get all directories contained in the `dir` option
+    available_package_names = {
+        path.name
+        for path in args.dir.glob("*")
+        if path.is_dir() and not path.name.startswith(".")
+    }
+
+    # Final dotfiles used by stow
+    package_names = set()
+    print(available_package_names)
+
+    # Remove the duplicated packages passed as input and make the intersection
+    # among the two sets in order to maintain only the input packages
+    if args.list is not None:
+        provided_package_names = set(args.list)
+        package_names = provided_package_names & available_package_names
+
+    # If package_names is empty, use each available package
+    if not package_names:
+        package_names = available_package_names
+
+    # Set stow operation
+    if args.delete:
+        operation = "-D"
+    elif args.restow:
+        operation = "-R"
+    else:
+        operation = "-S"
+
+    # Define the stow command
     cmd = [
         "stow",
-        f"--dir={dir!s}",
-        f"--target={target!s}",
+        f"--dir={args.dir!s}",
+        f"--target={args.target!s}",
+        operation,
         *package_names,
     ]
 
-    return subprocess.call(cmd, stdout=sys.stdout, stderr=sys.stderr)
-
-
-def main() -> int:
-    # -n, --no
-    # --adopt
-    # -v, --verbose
-    # -S, --stow
-    # -R, --restow
-    # -D, --delete
-
-    exclude_packages = set()
-    provided_package_names = set()
-    for arg in sys.argv[1:]:
-        provided_package_names.add(arg)
-
-    available_package_paths = {
-        path for path in dotfiles_path.glob("*") if is_package(path)
-    }
-    available_package_names = {path.name for path in available_package_paths}
-    package_names = provided_package_names & available_package_names
-
-    if not package_names or len(package_names) == len(available_package_names):
-        package_names = available_package_names - exclude_packages
-
-    result = stow(package_names)
-
-    return result
+    # Run stow command
+    subprocess.run(cmd, stdout=sys.stdout, stderr=sys.stderr)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
