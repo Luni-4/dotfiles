@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Comment out the programs you do not want to install!
+
 import argparse
 import collections
 import subprocess
@@ -16,7 +18,7 @@ Program = collections.namedtuple(
 PROGRAMS = [
     # apt and pacman packages
     Program("autoconf"),  # autotools
-    Program("cmake"), # cmake
+    Program("cmake"),  # cmake
     Program("curl"),  # curl
     Program("fish"),  # fish shell
     Program("mpv"),  # mpv player
@@ -51,7 +53,7 @@ ONLY_UBUNTU_PROGRAMS = [
         ],
     ),  # hyperfine benchmarker
     Program("python3-pip"),  # pip3
-    Program("python3-venv"), # venv used by black
+    Program("python3-venv"),  # venv used by black
     Program(
         run_script=[
             "sudo add-apt-repository ppa:atareao/telegram -y",
@@ -63,7 +65,7 @@ ONLY_UBUNTU_PROGRAMS = [
 
 # Only ArchLinux programs
 ONLY_ARCH_LINUX_PROGRAMS = [
-    Program("alacritty"), # alacritty terminal,
+    Program("alacritty"),  # alacritty terminal,
     Program("firefox"),  # mozilla firefox
     Program("hyperfine"),  # hyperfine benchmarker
     Program("python-pip"),  # pip3
