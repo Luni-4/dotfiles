@@ -182,9 +182,9 @@ augroup buffers_and_files
     "Set git commit messages textwidth and draw the relative line
     autocmd FileType gitcommit setlocal textwidth=72 colorcolumn=72
 
-    "Do not break words and enable the spell checker for markdown, text
-    "Python and Rust files
-    autocmd FileType markdown,text,python,rust setlocal linebreak spell
+    "Do not break words and enable the spell checker for markdown,
+    "Python, Rust and text files
+    autocmd FileType markdown,python,rust,text setlocal linebreak spell
 
     "Add an header to new shell scripts
     autocmd BufNewFile *.sh 0put =\"#!/bin/bash\"|$
