@@ -11,9 +11,7 @@ alias nvim-update="nvim -u ~/.config/nvim/plugins.vim +PlugInstall +PlugUpdate \
                    +UpdateRemotePlugins +qa"
 
 # Update and upgrade aliases
-alias cl="sudo apt clean &&
-          sudo apt autoclean &&
-          sudo rm -rf /var/lib/apt/lists/*"
+alias cl="sudo apt clean;sudo apt autoclean;sudo rm -rf /var/lib/apt/lists/*"
 alias i="sudo apt install"
 alias re="sudo apt remove --autoremove"
 alias ud="sudo apt update && sudo apt dist-upgrade"
