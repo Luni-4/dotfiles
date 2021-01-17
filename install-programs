@@ -35,6 +35,7 @@ PROGRAMS = [
     Program("wget"),  # wget
     # Snap packages
     Program("vlc", is_snap=True),  # vlc
+    Program("zulip", is_snap=True),  # zulip
 ]
 
 # Only Ubuntu programs
