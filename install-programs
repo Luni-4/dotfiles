@@ -34,6 +34,7 @@ PROGRAMS = [
     Program("thunderbird"),  # thunderbird
     Program("wget"),  # wget
     # Snap packages
+    Program("skype --classic", is_snap=True),  # skype
     Program("vlc", is_snap=True),  # vlc
     Program("zulip", is_snap=True),  # zulip
 ]
