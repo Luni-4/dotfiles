@@ -31,5 +31,6 @@ gsettings set org.gnome.shell favorite-apps "[
 'com.alacritty.Alacritty.desktop',
 'thunderbird.desktop',
 'telegram.desktop',
+'zulip_zulip.desktop',
 'gnome-system-monitor.desktop'
 ]"
