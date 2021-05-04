@@ -55,10 +55,10 @@ export PKG_CONFIG_PATH=$PKG_CONFIG
 export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
 # Vulkan Lunar-G
-export VULKAN_SDK=~/vulkan/1.1.108.0/x86_64
-export PATH=$VULKAN_SDK/bin:$PATH
-export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
-export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+#export VULKAN_SDK=~/vulkan/1.1.108.0/x86_64
+#export PATH=$VULKAN_SDK/bin:$PATH
+#export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
+#export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
 # Create python virtual environment
 function create-venv() {
