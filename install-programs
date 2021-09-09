@@ -41,12 +41,7 @@ PROGRAMS = [
 
 # Only Ubuntu programs
 ONLY_UBUNTU_PROGRAMS = [
-    Program(
-        run_script=[
-            "sudo add-apt-repository ppa:aslatter/ppa -y",
-            "sudo apt install alacritty",
-        ],
-    ),  # alacritty terminal
+    Program("alacritty --classic", is_snap=True),  # alacritty-terminal
     Program("build-essential"),  # build tools
     Program(
         run_script=[
