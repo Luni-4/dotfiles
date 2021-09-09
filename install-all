@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Install programs
+./install-programs
+
+# Pause shell script
+read -p "Press [Enter] to install dotfiles..."
+
+# Install dotfiles
+./install-configs --bash
+
+# Pause shell script
+read -p "Press [Enter] to install tools..."
+
+# Install tools
+./install-tools
+
+# Pause shell script
+read -p "Press [Enter] to udpate nvim plugins..."
+
+# Update vim plugins
+nvim-update
