@@ -53,6 +53,8 @@
   conflictStyle = diff3
 [diff]
   tool = kdiff3
+[pull]
+  ff = only
 [push]
   default = current
   followTags = true
