@@ -43,12 +43,6 @@ PROGRAMS = [
 ONLY_UBUNTU_PROGRAMS = [
     Program("alacritty --classic", is_snap=True),  # alacritty-terminal
     Program("build-essential"),  # build tools
-    Program(
-        run_script=[
-            "wget https://github.com/sharkdp/hyperfine/releases/download/v1.11.0/hyperfine_1.11.0_amd64.deb",
-            "sudo dpkg -i hyperfine_1.11.0_amd64.deb",
-        ],
-    ),  # hyperfine benchmarker
     Program("python3-pip"),  # pip3
     Program("python3-venv"),  # venv used by black
     Program(
@@ -64,7 +58,6 @@ ONLY_UBUNTU_PROGRAMS = [
 ONLY_ARCH_LINUX_PROGRAMS = [
     Program("alacritty"),  # alacritty terminal,
     Program("firefox"),  # mozilla firefox
-    Program("hyperfine"),  # hyperfine benchmarker
     Program("python-pip"),  # pip3
     Program("telegram-desktop", is_snap=True),  # telegram-desktop
     Program("tmux --noconfirm"),  # tmux terminal multiplexer

@@ -22,6 +22,9 @@ rustup update stable
 # Install rustfmt and clippy
 rustup component add rustfmt clippy
 
+# Install hyperfine
+cargo install hyperfine
+
 # Add favorite apps to dock
 gsettings set org.gnome.shell favorite-apps "[
 'firefox.desktop',
