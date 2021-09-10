@@ -1,8 +1,16 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/alacritty -t dev
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
+TryExec=alacritty
+Exec=alacritty
+Icon=${SNAP}/usr/share/icons/Alacritty.png
+Terminal=false
+Categories=System;TerminalEmulator;
 Name=Alacritty
-Comment=
+GenericName=Terminal
+Comment=A fast, cross-platform, OpenGL terminal emulator
+StartupWMClass=Alacritty
+Actions=New;
+
+[Desktop Action New]
+Name=New Terminal
+Exec=alacritty
