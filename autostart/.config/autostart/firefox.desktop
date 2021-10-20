@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/firefox
+Exec=/snap/bin/firefox
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
