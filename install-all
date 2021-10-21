@@ -20,3 +20,6 @@ read -p "Press [Enter] to udpate nvim plugins..."
 
 # Update vim plugins
 nvim-update
+
+# Install rust-analyzer
+nvim -c ":CocInstall coc-rust-analyzer"
