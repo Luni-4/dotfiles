@@ -25,4 +25,4 @@ nvim-update
 read -p "Press [Enter] to install rust-analyzer..."
 
 # Install rust-analyzer
-nvim -c ":CocInstall coc-rust-analyzer"
+nvim +":CocInstall coc-rust-analyzer" +qa
