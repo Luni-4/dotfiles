@@ -87,8 +87,8 @@ def main() -> None:
 
     # Remove .profile and .bashrc files on new operating systems
     if args.bash:
-        Path("~/.profile").unlink(True)
-        Path("~/.bashrc").unlink(True)
+        Path.home().joinpath(".profile").unlink(True)
+        Path.home().joinpath(".bashrc").unlink(True)
 
     # Define the stow command
     cmd = [
