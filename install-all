@@ -12,8 +12,11 @@ read -p "Press [Enter] to install dotfiles..."
 # Pause shell script
 read -p "Press [Enter] to install tools..."
 
+# Refresh environment variables
+source ~/.bashrc
+
 # Install tools
-gnome-terminal -- ./install-tools
+./install-tools
 
 # Pause shell script
 read -p "Press [Enter] to udpate nvim plugins..."
