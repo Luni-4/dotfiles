@@ -13,13 +13,16 @@ read -p "Press [Enter] to install dotfiles..."
 read -p "Press [Enter] to install tools..."
 
 # Install tools
-./install-tools
+gnome-terminal -- ./install-tools
 
 # Pause shell script
 read -p "Press [Enter] to udpate nvim plugins..."
 
 # Update vim plugins
 nvim-update
+
+# Pause shell script
+read -p "Press [Enter] to install rust-analyzer..."
 
 # Install rust-analyzer
 nvim -c ":CocInstall coc-rust-analyzer"
