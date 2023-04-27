@@ -62,3 +62,6 @@ alias docker-clean="sudo docker system prune -a --volumes"
 
 # 0x0 alias
 alias 0x0="~/scripts/0x0"
+
+# Memory profiler alias
+alias memory-profiler="~/scripts/bytehound"
