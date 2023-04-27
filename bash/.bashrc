@@ -57,18 +57,6 @@ export PKG_CONFIG_PATH=$PKG_CONFIG
 # Python path
 export PYTHONPATH=/usr/local/lib/python3.7/site-packages
 
-# Create python virtual environment
-function create-venv() {
-  mkdir ~/$1
-  cd ~/$1
-  virtualenv --system-site-packages -p python3 venv
-}
-
-# Activate python virtual environment
-function active-venv(){
-  source ~/$1/venv/bin/activate
-}
-
 # Finish function
 function finish(){
     [ -d .git ] && git config --local --remove-section user
