@@ -69,11 +69,6 @@ function active-venv(){
   source ~/$1/venv/bin/activate
 }
 
-# 0x0 function
-function 0x0(){
-    curl -F'file=@'$1 https://0x0.st
-}
-
 # Finish function
 function finish(){
     [ -d .git ] && git config --local --remove-section user
