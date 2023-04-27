@@ -41,6 +41,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Cuda path
 export PATH=/usr/local/cuda-9.0/bin:$PATH
 
+# Entry point for Depthai demo app, enables to run <depthai_launcher> in terminal
+export PATH=$PATH:$HOME/Luxonis/depthai/entrypoint
+
 # Mxe path
 export PATH=$HOME/Documenti/mxe/usr/bin:$PATH
 
@@ -87,3 +90,4 @@ trap finish EXIT
 
 # Exec fish
 exec fish
+
