@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Show installed nvidia packages
+dpkg -l | grep -i nvidia
+
+# Purge all nvidia drivers
+sudo apt-get remove --purge '*nvidia*'
