@@ -5,3 +5,6 @@ dpkg -l | grep -i nvidia
 
 # Purge all nvidia drivers
 sudo apt-get remove --purge '*nvidia*'
+
+# Remove package index leftovers
+sudo rm /etc/apt/sources.list.d/cuda*
