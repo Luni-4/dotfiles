@@ -7,4 +7,4 @@ dpkg -l | grep -i nvidia
 sudo apt-get remove --purge '*nvidia*'
 
 # Remove package index leftovers
-sudo rm /etc/apt/sources.list.d/cuda*
+sudo rm -rf /etc/apt/sources.list.d/cuda*

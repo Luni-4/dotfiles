@@ -67,4 +67,4 @@ alias 0x0="~/scripts/0x0"
 alias memory-profiler="~/scripts/bytehound"
 
 # Purge nvidia packages alias
-alias nvidia-purge="~/scripts/purge-nvidia"
+alias purge-nvidia="~/scripts/purge-nvidia"
