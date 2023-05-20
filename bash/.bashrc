@@ -39,7 +39,7 @@ export PATH=/usr/local/bin:$HOME/.local/bin:/usr/local/lib:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Cuda path
-export PATH=/usr/local/cuda-11.8/bin:$PATH
+export PATH=/usr/local/cuda-12.1/bin:$PATH
 
 # Entry point for Depthai demo app, enables to run <depthai_launcher> in terminal
 export PATH=$PATH:$HOME/Luxonis/depthai/entrypoint
@@ -48,7 +48,7 @@ export PATH=$PATH:$HOME/Luxonis/depthai/entrypoint
 export PATH=$HOME/Documenti/mxe/usr/bin:$PATH
 
 # Linker paths
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH
 
 # Pkg-config paths
 PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
