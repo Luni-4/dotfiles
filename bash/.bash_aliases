@@ -66,5 +66,8 @@ alias 0x0="~/scripts/0x0"
 # Memory profiler alias
 alias memory-profiler="~/scripts/bytehound"
 
+# Install nvidia drivers
+alias nvidia-install="~/scripts/nvidia-install"
+
 # Purge nvidia packages alias
 alias purge-nvidia="~/scripts/purge-nvidia"
