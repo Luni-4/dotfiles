@@ -46,6 +46,9 @@ set list listchars=tab:▸·,trail:·
 "Enable line numbers
 set number
 
+"Use html syntax for *.hbs files
+au BufReadPost *.hbs set syntax=html
+
 
 " ==========================
 " ===     Commands       ===
