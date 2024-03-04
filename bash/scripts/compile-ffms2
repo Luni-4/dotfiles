@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Export FFmpeg pkgconfig path
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+
+# Compile ffms2 as static library
+./autogen.sh --enable-static --disable-shared
+
+# Make and install library
+sudo make install
