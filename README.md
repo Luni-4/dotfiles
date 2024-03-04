@@ -14,3 +14,9 @@ If no argument is specified, the script will install all packages.
 
 Only the `scripts` directory is not installed.
 It contains a series of scripts that are not handled by `GNU/Stow`.
+
+If you want to re-install configuration files run:
+
+```console
+./install-configs -R
+```
