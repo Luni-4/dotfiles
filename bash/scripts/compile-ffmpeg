@@ -18,7 +18,6 @@ sudo apt install libx265-dev
 ./configure \
     --disable-debug \
     --disable-doc \
-    --disable-stripping \
     --disable-libdrm \
     --disable-cuda \
     --enable-fontconfig \
