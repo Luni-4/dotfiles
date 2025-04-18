@@ -26,6 +26,9 @@ Plug 'chitalu/vim-opencl'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+"Typst support and syntax highlighting
+Plug 'kaarmu/typst.vim'
+
 "Base-16 vim themes
 Plug 'chriskempson/base16-vim'
 
