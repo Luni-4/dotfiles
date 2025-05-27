@@ -41,9 +41,6 @@ export PATH=/usr/local/cuda-12.1/bin:$PATH
 # Entry point for Depthai demo app, enables to run <depthai_launcher> in terminal
 export PATH=$PATH:$HOME/Luxonis/depthai/entrypoint
 
-# Mxe path
-export PATH=$HOME/Documenti/mxe/usr/bin:$PATH
-
 # Linker paths
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH
 
