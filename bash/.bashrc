@@ -48,6 +48,9 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PAT
 PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG
 
+# Android NDK Home
+export ANDROID_NDK_HOME=$HOME/android-ndk-r28b
+
 # Finish function
 function finish(){
     [ -d .git ] && git config --local --remove-section user
