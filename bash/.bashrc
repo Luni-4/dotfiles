@@ -26,9 +26,6 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export EDITOR=nvim
 export VISUAL=nvim
 
-# Added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-
 # Add bash aliases
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
