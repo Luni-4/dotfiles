@@ -28,7 +28,6 @@
 
 # OS generated files #
 Icon?
-*.lock
 
 # Python #
 /__pycache__/
