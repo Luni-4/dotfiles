@@ -48,8 +48,10 @@ export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PAT
 PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG
 
-# Android NDK Home
-export ANDROID_NDK_HOME=$HOME/android-ndk-r28b
+# Android Studio
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.13113456"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools"
 
 # Finish function
 function finish(){
