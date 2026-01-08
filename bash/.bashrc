@@ -35,14 +35,8 @@ export PATH=/usr/local/bin:$HOME/.local/bin:/usr/local/lib:$PATH
 # Cargo path
 export PATH=$HOME/.cargo/bin:$PATH
 
-# Cuda path
-export PATH=/usr/local/cuda-12.1/bin:$PATH
-
-# Entry point for Depthai demo app, enables to run <depthai_launcher> in terminal
-export PATH=$PATH:$HOME/Luxonis/depthai/entrypoint
-
 # Linker paths
-export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-12.1/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Pkg-config paths
 PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
@@ -63,4 +57,3 @@ trap finish EXIT
 
 # Exec fish
 exec fish
-
