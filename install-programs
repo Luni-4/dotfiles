@@ -23,7 +23,6 @@ PROGRAMS = [
     Program("mpv"),  # mpv player
     Program("neovim"),  # neovim editor
     Program("npm"),  # npm
-    Program("python3-pip"),  # pip3
     Program("python3-venv"),  # venv used by black
     Program(
         run_script=[
