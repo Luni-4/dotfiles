@@ -89,8 +89,13 @@ set smartcase
 "Use the system clipboard
 set clipboard+=unnamedplus
 
-"Ignore these patterns during autocompletion
-set wildignore+=.git,*.o,*.obj,*.pyc,*.pyo,__pycache__,*.stackdump,*~.
+" Ignore common build artifacts, Python caches, and temporary files
+set wildignore+=
+    \ .git,
+    \ *.o,*.obj,
+    \ *.pyc,*.pyo,__pycache__,
+    \ *.stackdump,
+    \ *~
 
 "Ignore case during autocompletion
 set wildignorecase
