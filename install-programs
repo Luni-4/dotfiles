@@ -16,12 +16,15 @@ Program = collections.namedtuple(
 
 # Common programs between the two operating systems
 PROGRAMS = [
-    # apt and pacman packages
+    # apt packages
+    Program("build-essential"),  # build tools
     Program("curl"),  # curl
     Program("fish"),  # fish shell
     Program("mpv"),  # mpv player
     Program("neovim"),  # neovim editor
     Program("npm"),  # npm
+    Program("python3-pip"),  # pip3
+    Program("python3-venv"),  # venv used by black
     Program(
         run_script=[
             'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y'
@@ -30,25 +33,11 @@ PROGRAMS = [
     Program("snapd"),  # snap package manager
     Program("stow"),  # stow
     Program("thunderbird"),  # thunderbird
+    Program("tmux"),  # tmux terminal multiplexer
     # Snap packages
     Program("alacritty", is_snap=True),  # alacritty
     Program("telegram-desktop", is_snap=True),  # telegram-desktop
     Program("vlc", is_snap=True),  # vlc
-]
-
-# Only Ubuntu programs
-ONLY_UBUNTU_PROGRAMS = [
-    Program("build-essential"),  # build tools
-    Program("python3-pip"),  # pip3
-    Program("python3-venv"),  # venv used by black
-    Program("tmux"),  # tmux terminal multiplexer
-]
-
-# Only ArchLinux programs
-ONLY_ARCH_LINUX_PROGRAMS = [
-    Program("firefox"),  # mozilla firefox
-    Program("python-pip"),  # pip3
-    Program("tmux --noconfirm"),  # tmux terminal multiplexer
 ]
 
 # Install programs for a determined operating system
@@ -81,15 +70,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         prog="install",
         description="This tool installs my own software on different "
-        "Linux distributions (Ubuntu and ArchLinux)",
-    )
-
-    # Optional args
-    parser.add_argument(
-        "-a",
-        "--arch-linux",
-        action="store_true",
-        help="Choose ArchLinux as distribution",
+        "Linux distributions (Ubuntu)",
     )
 
     # Get arguments
@@ -98,24 +79,13 @@ def main() -> None:
     # Use sudo to install programs
     use_sudo = ["sudo"]
 
-    if args.arch_linux:
-        install_command = ["pacman", "-S"]
-    else:
-        # Avoid stale index
-        subprocess.run(use_sudo + ["apt-get", "update"])
+    # Avoid stale index
+    subprocess.run(use_sudo + ["apt-get", "update"])
 
-        install_command = ["apt-get", "-y", "install"]
+    install_command = ["apt-get", "-y", "install"]
 
     # Install common programs
     install_programs(use_sudo, install_command, PROGRAMS)
-
-    # According to the chosen operating system, install ONLY the
-    # requested programs
-    if args.arch_linux:
-        install_programs(use_sudo, install_command, ONLY_ARCH_LINUX_PROGRAMS)
-    else:
-        install_programs(use_sudo, install_command, ONLY_UBUNTU_PROGRAMS)
-
 
 if __name__ == "__main__":
     main()
