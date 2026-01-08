@@ -185,14 +185,14 @@ augroup buffers_and_files
       \ setlocal linebreak spell
 
     "Add an header to new shell scripts
-    autocmd BufNewFile *.sh 0put =\"#!/bin/bash\"|$
+    autocmd BufNewFile *.sh execute "0put ='#!/bin/bash'"
 
     "Add an header to new Python scripts
-    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\"|$
+    autocmd BufNewFile *.py execute "0put ='#!/usr/bin/env python3'"
 
     "Strip trailing whitespaces for some programming languages
-    autocmd FileType c,cc,cxx,cpp,h,hpp,java,md,python,ruby,rust,vim
-      \ autocmd BufWritePre <buffer> :%s/\s\+$//e
+    autocmd FileType c,cc,cxx,cpp,h,hpp,java,markdown,python,ruby,rust,vim
+      \ autocmd BufWritePre <buffer> %s/\s\+$//e
 
     "Automatically close vim if NERDTree is the only buffer left
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
