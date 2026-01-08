@@ -20,7 +20,9 @@ PROGRAMS = [
     Program("build-essential"),  # build tools
     Program("curl"),  # curl
     Program("fish"),  # fish shell
+    Program("meson"),  # meson
     Program("mpv"),  # mpv player
+    Program("ninja-build"), # ninja-build
     Program("neovim"),  # neovim editor
     Program("npm"),  # npm
     Program("python3-venv"),  # venv used by black

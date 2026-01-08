@@ -13,9 +13,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # Install Ruff globally.
 uv tool install ruff@latest
 
-# Install meson and ninja
-pip install --user meson ninja
-
 # Update rustup
 rustup self update
 
