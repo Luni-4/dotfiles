@@ -227,16 +227,3 @@ let g:vim_isort_map = ''
 
 "Run rustfmt before saving Rust files
 let g:rustfmt_autosave = 1
-
-" ==========================
-" ===     Functions      ===
-" ==========================
-
-"Show Rust documentation using CoC
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
