@@ -31,20 +31,13 @@ PROGRAMS = [
     Program("stow"),  # stow
     Program("thunderbird"),  # thunderbird
     # Snap packages
+    Program("alacritty", is_snap=True),  # alacritty
     Program("telegram-desktop", is_snap=True),  # telegram-desktop
     Program("vlc", is_snap=True),  # vlc
 ]
 
 # Only Ubuntu programs
 ONLY_UBUNTU_PROGRAMS = [
-    Program(
-        run_script =[
-            "cargo install alacritty && \
-             sudo cp ~/dotfiles/install/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg && \
-             sudo desktop-file-install ~/dotfiles/install/Alacritty.desktop && \
-             sudo update-desktop-database"
-        ]
-    ),  # alacritty-terminal
     Program("build-essential"),  # build tools
     Program("python3-pip"),  # pip3
     Program("python3-venv"),  # venv used by black
