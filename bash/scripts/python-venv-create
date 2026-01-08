@@ -1,7 +1,0 @@
-#!/bin/bash
-
-[ -z $1 ] && exit
-
-mkdir ~/$1
-cd ~/$1
-virtualenv --system-site-packages -p python3 venv
