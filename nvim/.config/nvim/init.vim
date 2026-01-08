@@ -104,7 +104,8 @@ set wildignorecase
 set spelllang=en,it
 
 "Error if there are trailing spaces
-match ErrorMsg '\s\+$'
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 "Set /g by default
 set gdefault
