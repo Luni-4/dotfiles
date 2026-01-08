@@ -182,8 +182,7 @@ augroup buffers_and_files
     "Do not break words and enable the spell checker for some programming
     "languages and text files
     autocmd FileType
-      \ c,cc,cpp,cxx,gitcommit,h,hpp,json,markdown,python,rust,text,toml,vim,
-      \ yaml,yml
+      \ c,cc,cpp,cxx,gitcommit,h,hpp,json,markdown,python,rust,text,toml,vim,yaml,yml
       \ setlocal linebreak spell
 
     "Add an header to new shell scripts
