@@ -1,18 +1,10 @@
 [Desktop Entry]
 Type=Application
-TryExec=alacritty
-Exec=alacritty
-Icon=Alacritty
-Terminal=false
-Categories=System;TerminalEmulator;
-
 Name=Alacritty
 GenericName=Terminal
 Comment=A fast, cross-platform, OpenGL terminal emulator
+Exec=snap run alacritty
+Icon=alacritty
+Terminal=false
+Categories=System;TerminalEmulator;
 StartupNotify=true
-StartupWMClass=Alacritty
-Actions=New;
-
-[Desktop Action New]
-Name=New Terminal
-Exec=alacritty
