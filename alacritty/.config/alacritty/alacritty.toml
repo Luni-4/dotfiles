@@ -1,0 +1,151 @@
+# Look at https://alacritty.org/config-alacritty.html
+
+[general]
+import = []
+working_directory = "None"
+live_config_reload = true
+
+[window]
+dimensions = { columns = 0, lines = 0 }
+padding = { x = 0, y = 0 }
+decorations = "full"
+startup_mode = "Windowed"
+opacity = 1.0
+dynamic_title = true
+dynamic_padding = false
+decorations_theme_variant = "None"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 14.0
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
+
+[colors]
+indexed_colors = [
+    { index = 16, color = "0xd08770" },
+    { index = 17, color = "0xab7967" },
+    { index = 18, color = "0x343d46" },
+    { index = 19, color = "0x4f5b66" },
+    { index = 20, color = "0xa7adba" },
+    { index = 21, color = "0xdfe1e8" }
+]
+
+[colors.primary]
+background = "0x2b303b"
+foreground = "0xc0c5ce"
+
+[colors.cursor]
+text = "0x2b303b"
+cursor = "0xc0c5ce"
+
+[colors.normal]
+black   = "0x2b303b"
+red     = "0xbf616a"
+green   = "0xa3be8c"
+yellow  = "0xebcb8b"
+blue    = "0x8fa1b3"
+magenta = "0xb48ead"
+cyan    = "0x96b5b4"
+white   = "0xc0c5ce"
+
+[colors.bright]
+black   = "0x65737e"
+red     = "0xbf616a"
+green   = "0xa3be8c"
+yellow  = "0xebcb8b"
+blue    = "0x8fa1b3"
+magenta = "0xb48ead"
+cyan    = "0x96b5b4"
+white   = "0xeff1f5"
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+color = "0xffffff"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[mouse]
+hide_when_typing = false
+bindings = [
+    { mouse = "Right", action = "Paste" }
+]
+
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"
+renderer = "None"
+print_events = false
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Control", action = "Paste" },
+    { key = "C", mods = "Control", action = "Copy" },
+    { key = "L", mods = "Control", action = "ClearLogNotice" },
+    { key = "L", mods = "Control", chars = "\\x0c" },
+    { key = "Home", mods = "Alt", chars = "\\x1b[1;3H" },
+    { key = "Home", chars = "\\x1bOH", mode = "AppCursor" },
+    { key = "Home", chars = "\\x1b[H", mode = "~AppCursor" },
+    { key = "End", mods = "Alt", chars = "\\x1b[1;3F" },
+    { key = "End", chars = "\\x1bOF", mode = "AppCursor" },
+    { key = "End", chars = "\\x1b[F", mode = "~AppCursor" },
+    { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
+    { key = "PageUp", mods = "Shift", chars = "\\x1b[5;2~", mode = "Alt" },
+    { key = "PageUp", mods = "Control", chars = "\\x1b[5;5~" },
+    { key = "PageUp", mods = "Alt", chars = "\\x1b[5;3~" },
+    { key = "PageUp", chars = "\\x1b[5~" },
+    { key = "PageDown", mods = "Shift", action = "ScrollPageDown", mode = "~Alt" },
+    { key = "PageDown", mods = "Shift", chars = "\\x1b[6;2~", mode = "Alt" },
+    { key = "PageDown", mods = "Control", chars = "\\x1b[6;5~" },
+    { key = "PageDown", mods = "Alt", chars = "\\x1b[6;3~" },
+    { key = "PageDown", chars = "\\x1b[6~" },
+    { key = "Tab", mods = "Shift", chars = "\\x1b[Z" },
+    { key = "Back", chars = "\\x7f" },
+    { key = "Back", mods = "Alt", chars = "\\x1b\\x7f" },
+    { key = "Insert", chars = "\\x1b[2~" },
+    { key = "Delete", chars = "\\x1b[3~" },
+    { key = "Left", mods = "Shift", chars = "\\x1b[1;2D" },
+    { key = "Left", mods = "Control", chars = "\\x1b[1;5D" },
+    { key = "Left", mods = "Alt", chars = "\\x1b[1;3D" },
+    { key = "Left", chars = "\\x1b[D", mode = "~AppCursor" },
+    { key = "Left", chars = "\\x1bOD", mode = "AppCursor" },
+    { key = "Right", mods = "Shift", chars = "\\x1b[1;2C" },
+    { key = "Right", mods = "Control", chars = "\\x1b[1;5C" },
+    { key = "Right", mods = "Alt", chars = "\\x1b[1;3C" },
+    { key = "Right", chars = "\\x1b[C", mode = "~AppCursor" },
+    { key = "Right", chars = "\\x1bOC", mode = "AppCursor" },
+    { key = "Up", mods = "Shift", chars = "\\x1b[1;2A" },
+    { key = "Up", mods = "Control", chars = "\\x1b[1;5A" },
+    { key = "Up", mods = "Alt", chars = "\\x1b[1;3A" },
+    { key = "Up", chars = "\\x1b[A", mode = "~AppCursor" },
+    { key = "Up", chars = "\\x1bOA", mode = "AppCursor" },
+    { key = "Down", mods = "Shift", chars = "\\x1b[1;2B" },
+    { key = "Down", mods = "Control", chars = "\\x1b[1;5B" },
+    { key = "Down", mods = "Alt", chars = "\\x1b[1;3B" },
+    { key = "Down", chars = "\\x1b[B", mode = "~AppCursor" },
+    { key = "Down", chars = "\\x1bOB", mode = "AppCursor" },
+    { key = "F1", chars = "\\x1bOP" },
+    { key = "F2", chars = "\\x1bOQ" },
+    { key = "F3", chars = "\\x1bOR" },
+    { key = "F4", chars = "\\x1bOS" },
+    { key = "F5", chars = "\\x1b[15~" },
+    { key = "F6", chars = "\\x1b[17~" },
+    { key = "F7", chars = "\\x1b[18~" },
+    { key = "F8", chars = "\\x1b[19~" },
+    { key = "F9", chars = "\\x1b[20~" },
+    { key = "F10", chars = "\\x1b[21~" },
+    { key = "F11", chars = "\\x1b[23~" },
+    { key = "F12", chars = "\\x1b[24~" },
+    { key = "NumpadEnter", chars = "\n" }
+]
