@@ -198,7 +198,7 @@ augroup buffers_and_files
     autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python3\"|$
 
     "Strip trailing whitespaces for some programming languages
-    autocmd FileType c,cc,cxx,cpp,h,hpp,java,python,ruby,rust,vim
+    autocmd FileType c,cc,cxx,cpp,h,hpp,java,md,python,ruby,rust,vim
       \ autocmd BufWritePre <buffer> :%s/\s\+$//e
 
     "Automatically close vim if NERDTree is the only buffer left
