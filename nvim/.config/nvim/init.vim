@@ -182,7 +182,8 @@ augroup buffers_and_files
     "Do not break words and enable the spell checker for some programming
     "languages and text files
     autocmd FileType
-      \ c,cc,cpp,cxx,gitcommit,h,hpp,java,markdown,python,ruby,rust,text,vim
+      \ c,cc,cpp,cxx,gitcommit,h,hpp,json,markdown,python,rust,text,toml,vim,
+      \ yaml,yml
       \ setlocal linebreak spell
 
     "Add an header to new shell scripts
@@ -192,7 +193,8 @@ augroup buffers_and_files
     autocmd BufNewFile *.py execute "0put ='#!/usr/bin/env python3'"
 
     "Strip trailing whitespaces for some programming languages
-    autocmd FileType c,cc,cxx,cpp,h,hpp,java,markdown,python,ruby,rust,vim
+    autocmd FileType
+      \ c,cc,cxx,cpp,h,hpp,json,markdown,python,rust,text,toml,vim,yaml,yml
       \ autocmd BufWritePre <buffer> %s/\s\+$//e
 
     "Automatically close vim if NERDTree is the only buffer left
