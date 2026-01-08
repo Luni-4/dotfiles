@@ -17,8 +17,6 @@ Program = collections.namedtuple(
 # Common programs between the two operating systems
 PROGRAMS = [
     # apt and pacman packages
-    Program("autoconf"),  # autotools
-    Program("cmake"),  # cmake
     Program("curl"),  # curl
     Program("fish"),  # fish shell
     Program("mpv"),  # mpv player
@@ -32,12 +30,9 @@ PROGRAMS = [
     Program("snapd"),  # snap package manager
     Program("stow"),  # stow
     Program("thunderbird"),  # thunderbird
-    Program("wget"),  # wget
     # Snap packages
     Program("telegram-desktop", is_snap=True),  # telegram-desktop
-    Program("skype --classic", is_snap=True),  # skype
     Program("vlc", is_snap=True),  # vlc
-    Program("zulip", is_snap=True),  # zulip
 ]
 
 # Only Ubuntu programs
