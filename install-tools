@@ -7,8 +7,11 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # Upgrade pip version
 python3 -m pip install --upgrade pip
 
-# Install Python formatting tools in home directory
-pip install --user black isort
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install Ruff globally.
+uv tool install ruff@latest
 
 # Install meson and ninja
 pip install --user meson ninja
