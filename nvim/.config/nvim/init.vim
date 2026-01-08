@@ -90,12 +90,7 @@ set smartcase
 set clipboard+=unnamedplus
 
 " Ignore common build artifacts, Python caches, and temporary files
-set wildignore+=
-    \ .git,
-    \ *.o,*.obj,
-    \ *.pyc,*.pyo,__pycache__,
-    \ *.stackdump,
-    \ *~
+set wildignore+=.git,*.o,*.obj,*.pyc,*.pyo,__pycache__,*.stackdump,*~.
 
 "Ignore case during autocompletion
 set wildignorecase
