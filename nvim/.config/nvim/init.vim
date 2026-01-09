@@ -117,7 +117,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 "GoTo code navigation using CoC
 nmap <silent> gd :tab split<CR><Plug>(coc-definition)
-nmap <silent> gy :tab vsplit<CR><Plug>(coc-type-definition)
+nmap <silent> gy :vsplit<CR><Plug>(coc-type-definition)
 nmap <silent> gi :vsplit<CR><Plug>(coc-implementation)
 nmap <silent> gr :vsplit<CR><Plug>(coc-references)
 
