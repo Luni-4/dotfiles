@@ -121,6 +121,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 "Enable/Disable line numbers with Shift+l
 nnoremap <S-l> :set nonumber!<CR>
 
@@ -210,3 +213,16 @@ augroup buffers_and_files
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
       \ b:NERDTree.isTabTree()) | q | endif
 augroup end
+
+" ==========================
+" ===     Functions      ===
+" ==========================
+
+"Show Rust documentation using CoC
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
