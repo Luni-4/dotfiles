@@ -116,10 +116,10 @@ nmap <S-s> :update<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 
 "GoTo code navigation using CoC
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd :tab split<CR><Plug>(coc-definition)
+nmap <silent> gy :tab vsplit<CR><Plug>(coc-type-definition)
+nmap <silent> gi :vsplit<CR><Plug>(coc-implementation)
+nmap <silent> gr :vsplit<CR><Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
