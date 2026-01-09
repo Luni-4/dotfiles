@@ -140,6 +140,9 @@ nnoremap <F5> :e %<CR>
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+"Always open vertical splits to the right of the current window
+set splitright
+
 "Move between windows with Alt-hjkl in terminal, insert and normal mode
 tnoremap <silent> <A-h> <C-\><C-N><C-w>h
 tnoremap <silent> <A-j> <C-\><C-N><C-w>j
