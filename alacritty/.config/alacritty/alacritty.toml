@@ -90,8 +90,7 @@ print_events = false
 
 [keyboard]
 bindings = [
-    { key = "V", mods = "Control", action = "Paste" },
-    { key = "C", mods = "Control", action = "Copy" },
+    { key = "C", mods = "Shift", action = "Copy" },
+    { key = "V", mods = "Shift", action = "Paste" },
     { key = "L", mods = "Control", action = "ClearLogNotice" },
-    { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
 ]
