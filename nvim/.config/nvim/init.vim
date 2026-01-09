@@ -102,7 +102,7 @@ set spelllang=en,it
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-"Set /g by default
+"Set /g by default, replacing all matches on each line by default.
 set gdefault
 
 " ==========================
@@ -164,6 +164,25 @@ endfor
 " ===  Files Settings   ===
 " ==========================
 
+"Highlight C code
+let c_gnu = 1
+let c_space_errors = 1
+
+"Max Python line length accepted
+let g:black_linelength = 79
+
+"Run rustfmt before saving Rust files (rust.vim plugin)
+let g:rustfmt_autosave = 1
+
+"Hide files, don't close them, if the current buffer has unsaved changes
+set hidden
+
+"Reload the files automatically on external changes
+set autoread
+
+"Set file to save undo changes
+set undofile
+
 augroup buffers_and_files
     autocmd!
 
@@ -191,25 +210,3 @@ augroup buffers_and_files
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
       \ b:NERDTree.isTabTree()) | q | endif
 augroup end
-
-"Hide files, don't close them, if the current buffer has unsaved changes
-set hidden
-
-"Reload the files automatically on external changes
-set autoread
-
-"Set file to save undo changes
-set undofile
-
-"Highlight C code
-let c_gnu = 1
-let c_space_errors = 1
-
-"Max Python line length accepted
-let g:black_linelength = 79
-
-"Disable the isort default mapping for the visual mode
-let g:vim_isort_map = ''
-
-"Run rustfmt before saving Rust files
-let g:rustfmt_autosave = 1
