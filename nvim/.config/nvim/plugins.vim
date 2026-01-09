@@ -25,12 +25,4 @@ Plug 'scrooloose/nerdtree'
 "Install CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Fast and hackable completion framework for Neovim
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-tmux'
-
 call plug#end()

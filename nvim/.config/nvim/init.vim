@@ -105,15 +105,6 @@ match ExtraWhitespace /\s\+$/
 "Set /g by default
 set gdefault
 
-"Enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-"Handle ncm2 popup opening
-set completeopt=noinsert,menuone,noselect
-
-"Disable autocompletion messages
-set shortmess+=c
-
 " ==========================
 " ===  Keymap bindings   ===
 " ==========================
