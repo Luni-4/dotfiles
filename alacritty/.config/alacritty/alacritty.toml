@@ -9,7 +9,7 @@ live_config_reload = true
 dimensions = { columns = 0, lines = 0 }
 padding = { x = 0, y = 0 }
 decorations = "full"
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 opacity = 1.0
 dynamic_title = true
 dynamic_padding = false
