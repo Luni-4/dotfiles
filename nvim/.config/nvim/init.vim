@@ -209,8 +209,13 @@ augroup buffers_and_files
 
     "Strip trailing whitespaces for some programming languages
     autocmd FileType
-      \ c,cc,cxx,cpp,h,hpp,json,markdown,python,rust,text,toml,vim,yaml,yml
+      \ c,cc,cxx,cpp,h,hpp,json,python,rust,text,toml,vim,yaml,yml
       \ autocmd BufWritePre <buffer> %s/\s\+$//e
+
+    " For Markdown, strip a single trailing whitespace, preserve two, and remove
+    " more.
+    autocmd FileType markdown
+      \ autocmd BufWritePre <buffer> %s/\v(^.*\S) $/\1/e | %s/\v(^.*\S)\s{3,}$/\1/e
 
     "Automatically close vim if NERDTree is the only buffer left
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
