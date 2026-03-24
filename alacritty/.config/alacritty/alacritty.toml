@@ -92,5 +92,5 @@ print_events = false
 bindings = [
     { key = "C", mods = "Control | Shift", action = "Copy" },
     { key = "V", mods = "Control | Shift", action = "Paste" },
-    { key = "L", mods = "Control", action = "ClearLogNotice" },
+    { key = "L", mods = "Control | Shift", action = "ClearLogNotice" },
 ]
