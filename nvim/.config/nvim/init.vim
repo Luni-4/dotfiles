@@ -209,7 +209,7 @@ augroup buffers_and_files
 
     "Strip trailing whitespaces for some programming languages
     autocmd FileType
-      \ c,cc,cxx,cpp,h,hpp,json,python,rust,text,toml,vim,yaml,yml
+      \ c,cc,cxx,cpp,h,hpp,json,python,rust,text,toml,typst,vim,yaml,yml
       \ autocmd BufWritePre <buffer> %s/\s\+$//e
 
     " For Markdown, strip a single trailing whitespace, preserve two, and remove
