@@ -43,8 +43,9 @@ PKG_CONFIG=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig
 export PKG_CONFIG_PATH=$PKG_CONFIG
 
 # Android Studio
+export JAVA_HOME="/snap/android-studio/current/jbr"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/29.0.13113456"
+export NDK_HOME="$ANDROID_HOME/ndk/29.0.13113456"
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools"
 
 # Finish function
