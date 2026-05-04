@@ -10,8 +10,8 @@ import typing as T
 # Define a namedtuple to describe a program
 Program = collections.namedtuple(
     "Program",
-    field_names=["command", "is_snap", "run_script"],
-    defaults=["", False, None],
+    field_names=["command", "is_snap", "run_script", "options"],
+    defaults=["", False, None, ""],
 )
 
 # Common programs between the two operating systems
@@ -39,6 +39,7 @@ PROGRAMS = [
     Program("alacritty", is_snap=True),  # alacritty
     Program("telegram-desktop", is_snap=True),  # telegram-desktop
     Program("vlc", is_snap=True),  # vlc
+    Program("zig", is_snap=True, options="--beta --classic"), # zig
 ]
 
 # Install programs for a determined operating system
@@ -64,7 +65,7 @@ def install_programs(
                 output = ps.communicate()[0]
                 print(output.decode())
         else:
-            subprocess.run(use_sudo + use_command + program[0].split())
+            subprocess.run(use_sudo + use_command + program[0].split() + program[3].split())
 
 
 def main() -> None:
