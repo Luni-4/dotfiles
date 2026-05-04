@@ -1,7 +1,7 @@
 "Initialize plugins
 call plug#begin()
 
-"Rust file detection, syntax highlighting, formatting, syntastic integration...
+"Rust file detection, syntax highlighting, formatting, syntactic integration
 Plug 'rust-lang/rust.vim'
 
 "Fish syntax highlighting, formatting...
