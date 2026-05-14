@@ -15,6 +15,9 @@ fish_vi_key_bindings
 # Use a line as cursor shape in vi insert mode
 set -g fish_cursor_insert line
 
+# Add node path to fish
+fish_add_path ~/.local/share/nvm/v24.15.0/bin
+
 function fish_prompt
 
     # Print name and hostname
