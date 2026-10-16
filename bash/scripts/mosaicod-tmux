@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Mosaico repository root, defaults to ~/mosaico
+REPO=${1:-~/mosaico}
+REPO=$(cd "$REPO" && pwd) || exit 1
+
+# Close a prior session
+tmux kill-session -t mosaicod > /dev/null 2>&1
+
+tmux new-session -s mosaicod -c "$REPO/mosaicod" -d
+tmux rename-window -t mosaicod dev
+tmux new-window -t mosaicod -n build -c "$REPO/mosaicod"
+tmux new-window -t mosaicod -n claude -c "$REPO/mosaicod"
+tmux send-keys -t mosaicod:claude "claude" C-m
+tmux new-window -t mosaicod -n compose -c "$REPO/docker/devel"
+tmux send-keys -t mosaicod:compose "docker compose up" C-m
+tmux select-window -t mosaicod:dev
+tmux attach -t mosaicod
