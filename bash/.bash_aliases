@@ -46,6 +46,7 @@ alias gs="git status"
 
 # Tmux aliases
 alias dev="~/scripts/dev-tmux"
+alias mosaicod-dev="~/scripts/mosaicod-tmux"
 alias vlc-dev="~/scripts/vlc-tmux ~/vlc vlc"
 alias vlmc-dev="~/scripts/vlc-tmux ~/vlmc vlmc"
 
